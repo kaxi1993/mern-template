@@ -1,0 +1,55 @@
+{
+    "apps": [{
+            "name": "production",
+            "script": ".",
+            "env": {
+                "NODE_ENV": "production"
+            },
+            "watch": true,
+            "ignore_watch": [
+                ".editorconfig",
+                ".eslintrc",
+                ".eslintrignore",
+                ".vscode",
+                ".gitignore",
+                "node_modules",
+                "dist",
+                "build",
+                "coverage",
+                "docs",
+                "jsdoc",
+                "templates",
+                "tests",
+                "tmp",
+                "uploads"
+            ],
+            "source_map_support": true
+        },
+        {
+            "name": "testing",
+            "script": ".",
+            "env": {
+                "NODE_ENV": "testing"
+            },
+            "watch": true,
+            "ignore_watch": [
+                ".editorconfig",
+                ".eslintrc",
+                ".eslintrignore",
+                ".vscode",
+                ".gitignore",
+                "node_modules",
+                "dist",
+                "build",
+                "coverage",
+                "docs",
+                "jsdoc",
+                "templates",
+                "tests",
+                "tmp",
+                "uploads"
+            ],
+            "source_map_support": true
+        }
+    ]
+}
