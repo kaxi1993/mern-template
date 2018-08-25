@@ -1,6 +1,7 @@
 const http = require('http')
 const path = require('path')
 const dotenv = require('dotenv')
+const signale = require('signale')
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
@@ -48,11 +49,13 @@ function onError(error) {
 
     switch (error.code) {
         case 'EACCES':
-            console.error(bind + ' requires elevated privileges')
+            signale.fatal(bind + ' requires elevated privileges')
+
             process.exit(1)
             break
         case 'EADDRINUSE':
-            console.error(bind + ' is already in use')
+            signale.fatal(bind + ' is already in use')
+
             process.exit(1)
             break
         default:
@@ -66,5 +69,5 @@ function onListening() {
         ? 'pipe ' + addr
         : 'port ' + addr.port
 
-    // console.info('Listening on ' + bind)
+    signale.success('Listening on ' + bind)
 }
