@@ -9,7 +9,7 @@ mern-template:
         - .:/usr/src/app/
     environment:
         NODE_ENV: development
-        MONGODB_URI: mongodb://mongodb:27017/mern-template
+        MONGODB_URI: mongodb://mongodb:27017/mern_template
 
 mongodb:
     image: mongo:latest

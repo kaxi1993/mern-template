@@ -101,35 +101,35 @@ config.module.rules.push({
     loader: extractStyles.extract({
         fallback: 'style-loader',
         use: [{
-            loader: 'css-loader',
-            options: {
-                sourceMap: project.sourcemaps,
-                minimize: {
-                    autoprefixer: {
-                        add: true,
-                        remove: true,
-                        browsers: ['last 2 versions'],
+                loader: 'css-loader',
+                options: {
+                    sourceMap: project.sourcemaps,
+                    minimize: {
+                        autoprefixer: {
+                            add: true,
+                            remove: true,
+                            browsers: ['last 2 versions'],
+                        },
+                        discardComments: {
+                            removeAll: true,
+                        },
+                        discardUnused: false,
+                        mergeIdents: false,
+                        reduceIdents: false,
+                        safe: true,
+                        sourcemap: project.sourcemaps,
                     },
-                    discardComments: {
-                        removeAll: true,
-                    },
-                    discardUnused: false,
-                    mergeIdents: false,
-                    reduceIdents: false,
-                    safe: true,
-                    sourcemap: project.sourcemaps,
                 },
             },
-        },
-        {
-            loader: 'sass-loader',
-            options: {
-                sourceMap: project.sourcemaps,
-                includePaths: [
-                    inProjectSrc('styles'),
-                ],
-            },
-        }
+            {
+                loader: 'sass-loader',
+                options: {
+                    sourceMap: project.sourcemaps,
+                    includePaths: [
+                        inProjectSrc('styles'),
+                    ],
+                },
+            }
         ],
     })
 })
