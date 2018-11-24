@@ -4,7 +4,8 @@
     "description": "MongoDB Express React Node app starter template",
     "main": "bin/www",
     "scripts": {
-        "dev": "nodemon ./bin/www"
+        "dev": "nodemon ./bin/www",
+        "webpack": "webpack --watch"
     },
     "repository": {
         "type": "git",
@@ -16,13 +17,14 @@
         "body-parser": "^1.18.3",
         "cookie-parser": "^1.4.3",
         "dotenv": "^5.0.0",
-        "express": "^4.16.2",
+        "express": "^4.16.4",
         "mongoose": "^5.0.6",
-        "morgan": "^1.9.0",
+        "morgan": "^1.9.1",
         "signale": "^1.2.1"
     },
     "devDependencies": {
         "babel-eslint": "^8.2.5",
+        "clean-webpack-plugin": "^1.0.0",
         "enzyme": "^3.3.0",
         "enzyme-adapter-react-16": "^1.1.1",
         "eslint": "^4.19.1",
@@ -30,10 +32,12 @@
         "eslint-plugin-import": "^2.13.0",
         "eslint-plugin-jsx-a11y": "^6.0.3",
         "eslint-plugin-react": "^7.10.0",
+        "html-webpack-plugin": "^3.2.0",
         "jest": "^23.2.0",
-        "nodemon": "^1.15.0",
-        "webpack": "^4.12.2",
-        "webpack-cli": "^3.0.8"
+        "nodemon": "^1.18.6",
+        "webpack": "^4.26.0",
+        "webpack-cli": "^3.0.8",
+        "webpack-dev-middleware": "^3.4.0"
     },
     "babel": {
         "plugins": [

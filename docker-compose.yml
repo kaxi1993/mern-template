@@ -1,4 +1,4 @@
-mern-template:
+webapp:
     build: .
     dockerfile: Dockerfile-development
     ports:
@@ -9,7 +9,7 @@ mern-template:
         - .:/usr/src/app/
     environment:
         NODE_ENV: development
-        MONGODB_URI: mongodb://mongodb:27017/mern_template
+        MONGODB_URI: mongodb://mongodb:27017/mern-template
 
 mongodb:
     image: mongo:latest
