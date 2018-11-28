@@ -2,7 +2,7 @@ webapp:
     build: .
     dockerfile: Dockerfile-development
     ports:
-        - "3000:3000"
+        - "5000:5000"
     links:
         - mongodb
     volumes:

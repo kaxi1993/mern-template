@@ -1,26 +1,31 @@
 const path = require('path')
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    mode: 'development',
     entry: {
-        app: './client/index.js'
+        app: [
+            './client/index.js',
+            'webpack-hot-middleware/client.js?path=/__webpack_hmr&timeout=2000&overlay=false&reload=true'
+        ]
     },
-    devtool: 'inline-source-map',
     plugins: [
         new CleanWebpackPlugin(['public']),
         new HtmlWebpackPlugin({
             title: 'Mern',
             template: path.resolve(__dirname, 'client', 'index.html'),
-            filename: './index.html'
-        }),
-        new webpack.HotModuleReplacementPlugin()
+            filename: 'index.html'
+        })
     ],
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'public'),
         publicPath: '/'
+    },
+    resolve: {
+        modules: [
+            'node_modules',
+        ],
+        extensions: ['*', '.js', '.jsx', '.json']
     }
 }

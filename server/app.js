@@ -4,21 +4,59 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
+const webpackHotMiddleware = require('webpack-hot-middleware')
 const logger = require('morgan')
 
-const config = require('../webpack.config.js')
+const devConfig = require('../webpack.dev.js')
 
 const app = express()
-const compiler = webpack(config)
-
-app.use(webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
-}))
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
+
+if (process.env.NODE_ENV === 'development') {
+    const compiler = webpack(devConfig)
+
+    app.use(webpackDevMiddleware(compiler, {
+        publicPath: '/',
+        contentBase: path.resolve(__dirname, '..', 'client'),
+        hot: true,
+        quiet: false,
+        noInfo: false,
+        lazy: false,
+        stats: 'normal',
+    }))
+
+    app.use(webpackHotMiddleware(compiler, {
+        path: '/__webpack_hmr',
+        heartbeat: 2000
+    }))
+
+    app.use(express.static(path.resolve(__dirname, '..', 'public')))
+
+    app.use('*', (req, res, next) => {
+        const filename = path.join(compiler.outputPath, 'index.html')
+
+        compiler.outputFileSystem.readFile(filename, (err, result) => {
+            if (err) {
+                return next(err)
+            }
+            res.set('content-type', 'text/html')
+            res.send(result)
+
+            return res.end()
+        })
+    })
+} else {
+    app.use(express.static(path.resolve(__dirname, '..', 'public')))
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '..', 'index.html'))
+    })
+}
 
 module.exports = app

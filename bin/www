@@ -21,7 +21,7 @@ const server = http.createServer(app)
 
 const onListening = () => {
     const addr = server.address()
-    const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port
+    const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`
 
     signale.success(`Server listening on ${bind}`)
 }
@@ -31,16 +31,16 @@ const onError = (error) => {
         throw error
     }
 
-    const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port
+    const bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`
 
     switch (error.code) {
         case 'EACCES':
-            signale.fatal(bind + ' requires elevated privileges')
+            signale.fatal(`${bind} requires elevated privileges`)
 
             process.exit(1)
             break
         case 'EADDRINUSE':
-            signale.fatal(bind + ' is already in use')
+            signale.fatal(`${bind} is already in use`)
 
             process.exit(1)
             break

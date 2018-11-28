@@ -4,13 +4,14 @@
     "description": "MongoDB Express React Node app starter template",
     "main": "bin/www",
     "scripts": {
-        "dev": "nodemon ./bin/www",
-        "webpack": "webpack --watch"
+        "start": "nodemon ./bin/www",
+        "build": "webpack --config webpack.prod.js"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/kaxi1993/mern-template"
     },
+    "sideEffects": false,
     "author": "kaxi1993<kakhidze2012@gmail.com>",
     "license": "MIT",
     "dependencies": {
@@ -37,7 +38,9 @@
         "nodemon": "^1.18.6",
         "webpack": "^4.26.0",
         "webpack-cli": "^3.0.8",
-        "webpack-dev-middleware": "^3.4.0"
+        "webpack-dev-middleware": "^3.4.0",
+        "webpack-hot-middleware": "^2.24.3",
+        "webpack-merge": "^4.1.4"
     },
     "babel": {
         "plugins": [
