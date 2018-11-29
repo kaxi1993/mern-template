@@ -4,8 +4,11 @@
     "description": "MongoDB Express React Node app starter template",
     "main": "bin/www",
     "scripts": {
-        "start": "nodemon ./bin/www",
+        "start": "nodemonn",
         "build": "webpack --config webpack.prod.js"
+    },
+    "nodemonConfig": {
+        "ignore": ["client/*"]
     },
     "repository": {
         "type": "git",

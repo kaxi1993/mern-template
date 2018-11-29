@@ -13,15 +13,9 @@
                 ".vscode",
                 ".gitignore",
                 "node_modules",
-                "dist",
-                "build",
                 "coverage",
                 "docs",
-                "jsdoc",
-                "templates",
-                "tests",
-                "tmp",
-                "uploads"
+                "tests"
             ],
             "source_map_support": true
         },
@@ -39,15 +33,9 @@
                 ".vscode",
                 ".gitignore",
                 "node_modules",
-                "dist",
-                "build",
                 "coverage",
                 "docs",
-                "jsdoc",
-                "templates",
-                "tests",
-                "tmp",
-                "uploads"
+                "tests"
             ],
             "source_map_support": true
         }
