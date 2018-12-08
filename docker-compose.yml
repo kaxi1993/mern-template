@@ -7,7 +7,6 @@ webapp:
         - mongodb
     volumes:
         - .:/usr/src/app/
-        - /usr/src/app/node_modules
     environment:
         NODE_ENV: development
         MONGODB_URI: mongodb://mongodb:27017/mern-template
