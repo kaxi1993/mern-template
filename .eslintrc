@@ -3,11 +3,10 @@
     "extends": [
         "airbnb-base"
     ],
-    "plugins": [
-        "react",
-        "jsx-a11y",
-        "import"
-    ],
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+    },
     "env": {
         "browser": true,
         "node": true,
@@ -71,6 +70,14 @@
             {
                 "treatUndefinedAsUnspecified": true
             }
-        ]
-    }
+        ],
+        "react/jsx-uses-react": 2,
+        "react/jsx-uses-vars": 2,
+        "react/react-in-jsx-scope": 2
+    },
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ]
 }
