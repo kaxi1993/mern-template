@@ -3,9 +3,11 @@
     "extends": [
         "airbnb-base"
     ],
-    "ecmaFeatures": {
-        "jsx": true,
-        "modules": true
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        }
     },
     "env": {
         "browser": true,
@@ -79,5 +81,12 @@
         "react",
         "jsx-a11y",
         "import"
-    ]
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx"]
+            }
+        }
+    }
 }

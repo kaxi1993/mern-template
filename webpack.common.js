@@ -15,10 +15,10 @@ module.exports = {
         publicPath: '/'
     },
     resolve: {
+        extensions: ['.js', '.jsx', '.json', '.scss'],
         modules: [
             'node_modules',
-        ],
-        extensions: ['.js', '.jsx', '.json']
+        ]
     },
     module: {
         rules: [{
@@ -32,6 +32,21 @@ module.exports = {
                     ]
                 }
             }
+        }, {
+            test: /\.scss$/,
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader',
+                options: {
+                    sourceMap: true
+                }
+            }, {
+                loader: 'sass-loader',
+                options: {
+                    sourceMap: true
+                }
+            }]
         }]
     },
     plugins: [
