@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
+import Navbar from './Common/Navbar'
+
 import './normalize.scss'
+import './common.scss'
 
 class App extends Component {
     constructor (props) {
@@ -13,8 +16,8 @@ class App extends Component {
 
     render () {
         return (
-            <div>
-                <h1>{this.state.name}</h1>
+            <div className="App">
+                <Navbar />
             </div>
         )
     }

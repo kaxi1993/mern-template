@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'public'),
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
     },
     resolve: {
@@ -50,7 +50,7 @@ module.exports = {
         }]
     },
     plugins: [
-        new CleanWebpackPlugin(['public']),
+        new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'Mern',
             template: path.resolve(__dirname, 'client', 'index.html'),
