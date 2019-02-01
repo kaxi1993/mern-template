@@ -2,9 +2,9 @@ $hoverColor: #f5f5f5;
 $linkColor: #333;
 
 .mt-menu {
-    position: fixed;
+    position: absolute;
     top: 64px;
-    right: 288px;
+    left: -181px;
     width: 250px;
     border: 1px solid rgba(27, 31, 35, .15);
     border-radius: 3px;

@@ -7,7 +7,7 @@ class Menu extends Component {
         super(props)
 
         this.state = {
-            open: true
+            open: false
         }
 
         this.closeMenu = this.closeMenu.bind(this)
