@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import Profile from './Profile'
 
@@ -9,7 +10,7 @@ class Navbar extends Component {
         super(props)
 
         this.state = {
-            authenticated: true
+            authenticated: false
         }
     }
 
@@ -38,14 +39,14 @@ class Navbar extends Component {
                                 <div className='mt-header__actions-container'>
                                     <ul className='mt-header__actions'>
                                         <li className='mt-header__action'>
-                                            <a href='/login' className='mt-header__action-link' onClick={e => this.logIn(e)}>
+                                            <NavLink to='/login' className='mt-header__action-link' activeClassName='mt-header__action-link--active'>
                                                 Log in
-                                            </a>
+                                            </NavLink>
                                         </li>
                                         <li className='mt-header__action'>
-                                            <a href='/signup' className='mt-header__action-link'>
+                                            <NavLink to='/signup' className='mt-header__action-link' activeClassName='mt-header__action-link--active'>
                                                 Sign up
-                                            </a>
+                                            </NavLink>
                                         </li>
                                     </ul>
                                 </div>
