@@ -15,12 +15,8 @@ $actionLinkBorderColor: #24c6e3;
 }
 
 .mt-header__inner {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
+    align-items: center;
 }
 
 .mt-header__brand {
@@ -42,17 +38,6 @@ $actionLinkBorderColor: #24c6e3;
     &:not(:last-child) {
         margin-right: 2rem;
     }
-
-    &:hover:after {
-        position: absolute;
-        bottom: 0;
-        border-top: 2px solid $actionLinkBorderColor;
-        content: '';
-        display: block;
-        transition: all 2s ease;
-        opacity: 1;
-        width: 100%;
-    }
 }
 
 .mt-header__action-link {
@@ -66,5 +51,20 @@ $actionLinkBorderColor: #24c6e3;
 
     &:hover {
         color: darken($color: $actionLinkColor, $amount: 20%);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover:after {
+        position: absolute;
+        bottom: 0;
+        border-top: 2px solid $actionLinkBorderColor;
+        content: '';
+        display: block;
+        transition: all 2s ease;
+        opacity: 1;
+        width: 100%;
     }
 }

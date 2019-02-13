@@ -39,12 +39,12 @@ class Navbar extends Component {
                                 <div className='mt-header__actions-container'>
                                     <ul className='mt-header__actions'>
                                         <li className='mt-header__action'>
-                                            <NavLink to='/login' className='mt-header__action-link' activeClassName='mt-header__action-link--active'>
+                                            <NavLink to='/login' className='mt-header__action-link'>
                                                 Log in
                                             </NavLink>
                                         </li>
                                         <li className='mt-header__action'>
-                                            <NavLink to='/signup' className='mt-header__action-link' activeClassName='mt-header__action-link--active'>
+                                            <NavLink to='/signup' className='mt-header__action-link'>
                                                 Sign up
                                             </NavLink>
                                         </li>
