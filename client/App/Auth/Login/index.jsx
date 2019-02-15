@@ -19,7 +19,7 @@ class Login extends Component {
 
         return (
             <div className='mt-login'>
-                <div className='mt-login__form-containerr'>
+                <div className='mt-login__form-container'>
                     <h2 className='mt-auth__title'>Log in</h2>
                     <form className='mt-login__form'>
                         <TextField
@@ -45,8 +45,8 @@ class Login extends Component {
                                 size='large'
                                 fullWidth={true}
                                 style={{
-                                    paddingTop: '16px',
-                                    paddingBottom: '16px'
+                                    paddingTop: '12px',
+                                    paddingBottom: '12px'
                                 }}
                             >
                                 Log in
