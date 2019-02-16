@@ -1,10 +1,4 @@
-.mt-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 65px);
-}
-
-.mt-login__form-container {
-    padding-bottom: 50px;
+.mt-login__forgot,
+.mt-login__signup {
+    font-size: 15px;
 }

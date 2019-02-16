@@ -1,3 +1,17 @@
+$linkColor: #f5004c;
+
+.mt-auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 65px);
+}
+
+.mt-auth__form-container {
+    padding-bottom: 80px;
+    width: 400px;
+}
+
 .mt-auth__title {
     text-align: center;
     margin: 0px;
@@ -6,4 +20,13 @@
 
 .mt-auth__actions {
     margin-top: 14px;
+}
+
+.mt-auth__actions-link {
+    color: $linkColor;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }

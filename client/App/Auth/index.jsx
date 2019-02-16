@@ -8,7 +8,7 @@ import './Auth.scss'
 
 function Auth () {
     return (
-        <div className='mt-auth mt-container'>
+        <div className='mt-container'>
             <Route path='/login' component={Login} />
             <Route path='/signup' component={Signup} />
         </div>

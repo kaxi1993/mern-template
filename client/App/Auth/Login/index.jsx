@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import { TextField, Button } from '@material-ui/core'
 
@@ -18,10 +19,10 @@ class Login extends Component {
         const { email, password } = this.state
 
         return (
-            <div className='mt-login'>
-                <div className='mt-login__form-container'>
+            <div className='mt-login mt-auth'>
+                <div className='mt-auth__form-container'>
                     <h2 className='mt-auth__title'>Log in</h2>
-                    <form className='mt-login__form'>
+                    <form className='mt-auth__form'>
                         <TextField
                             label='Email'
                             type='email'
@@ -51,6 +52,13 @@ class Login extends Component {
                             >
                                 Log in
                             </Button>
+                            <p className='mt-login__forgot'>
+                                <Link to='signup' className='mt-auth__actions-link'>Forgot your password?</Link>
+                            </p>
+                            <p className='mt-login__signup'>
+                                Don't have an account?&nbsp;
+                                <Link to='signup' className='mt-auth__actions-link'>Sign up</Link>
+                            </p>
                         </div>
                     </form>
                 </div>
