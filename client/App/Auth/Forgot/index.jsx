@@ -20,7 +20,7 @@ class Forgot extends Component {
             <div className='mt-forgot mt-auth'>
                 <div className='mt-auth__form-container'>
                     <h2 className='mt-auth__title'>Forgot</h2>
-                    <p className='mt-forgot__description'>
+                    <p className=' mt-auth__description'>
                         To reset your password, please enter the email address and we will send you instructions.
                     </p>
                     <form className='mt-auth__form'>
