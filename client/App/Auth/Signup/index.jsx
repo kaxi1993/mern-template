@@ -70,14 +70,14 @@ class Signup extends Component {
                                     id='privacy'
                                     style={{
                                         padding: 0,
-                                        paddingRight: '5px'
+                                        paddingRight: 5
                                     }}
                                 />
                                 <label htmlFor='privacy'>
                                     I agree to the&nbsp;
-                                    <Link to='signup' className='mt-auth__actions-link'>Terms of Service</Link>
+                                    <Link to='signup' className='mt-auth__action-link'>Terms of Service</Link>
                                     &nbsp;and&nbsp;
-                                    <Link to='signup' className='mt-auth__actions-link'>Privacy Policy</Link>
+                                    <Link to='signup' className='mt-auth__action-link'>Privacy Policy</Link>
                                 </label>
                             </p>
                             <Button
@@ -86,8 +86,8 @@ class Signup extends Component {
                                 size='large'
                                 fullWidth={true}
                                 style={{
-                                    paddingTop: '12px',
-                                    paddingBottom: '12px'
+                                    paddingTop: 12,
+                                    paddingBottom: 12
                                 }}
                             >
                                 Create New Account

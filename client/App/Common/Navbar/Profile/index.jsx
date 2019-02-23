@@ -5,15 +5,6 @@ import Button from '@material-ui/core/Button'
 import Menu from './Menu'
 import './Profile.scss'
 
-const avatarStyle = {
-    width: 30,
-    height: 30
-}
-
-const buttonStyle = {
-    borderRadius: 0
-}
-
 class Profile extends Component {
     constructor (props) {
         super(props)
@@ -51,9 +42,14 @@ class Profile extends Component {
                 <Button
                     onClick={this.handleClick}
                     className='mt-header__profile-action'
-                    style={buttonStyle}
+                    style={{
+                        borderRadius: 0
+                    }}
                 >
-                    <Avatar alt={fullName} src={avatarUrl} className='mt-header__avatar' style={avatarStyle} />
+                    <Avatar alt={fullName} src={avatarUrl} className='mt-header__avatar' style={{
+                        width: 30,
+                        height: 30
+                    }} />
                     {open ? (
                         <span className='mt-header__arrow-up'>
                             <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'><path d='M7 14l5-5 5 5z' /><path d='M0 0h24v24H0z' fill='none' /></svg>

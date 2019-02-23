@@ -46,18 +46,18 @@ class Login extends Component {
                                 size='large'
                                 fullWidth={true}
                                 style={{
-                                    paddingTop: '12px',
-                                    paddingBottom: '12px'
+                                    paddingTop: 12,
+                                    paddingBottom: 12
                                 }}
                             >
                                 Log in
                             </Button>
                             <p className='mt-login__forgot'>
-                                <Link to='signup' className='mt-auth__actions-link'>Forgot your password?</Link>
+                                <Link to='forgot' className='mt-auth__action-link'>Forgot your password?</Link>
                             </p>
                             <p className='mt-login__signup'>
                                 Don't have an account?&nbsp;
-                                <Link to='signup' className='mt-auth__actions-link'>Sign up</Link>
+                                <Link to='signup' className='mt-auth__action-link'>Sign up</Link>
                             </p>
                         </div>
                     </form>
