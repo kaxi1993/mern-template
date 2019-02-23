@@ -1,5 +1,4 @@
 $actionLinkColor: #717171;
-$actionLinkBorderColor: #24c6e3;
 
 .mt-header {
     width: 100%;
@@ -11,7 +10,9 @@ $actionLinkBorderColor: #24c6e3;
     top: 0;
     left: 0;
     width: 100%;
+    background-color: #ffffff;
     border-bottom: 1px solid #dcdcdc;
+    z-index: 100;
 }
 
 .mt-header__inner {
@@ -60,7 +61,7 @@ $actionLinkBorderColor: #24c6e3;
     &:hover:after {
         position: absolute;
         bottom: 0;
-        border-top: 2px solid $actionLinkBorderColor;
+        border-top: 2px solid #24c6e3;
         content: '';
         display: block;
         transition: all 2s ease;

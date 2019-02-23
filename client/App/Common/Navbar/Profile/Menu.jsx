@@ -31,7 +31,7 @@ class Menu extends Component {
         const { open } = this.state
 
         return (
-            <div className='mt-menu-wrapper'>
+            <div className='mt-menu__container'>
                 <div className='mt-menu__background' onClick={this.closeMenu} style={{ display: open ? 'block' : 'none' }}></div>
                 <div className='mt-menu' style={{ display: open ? 'block' : 'none' }}>
                     <ul className='mt-menu__items'>

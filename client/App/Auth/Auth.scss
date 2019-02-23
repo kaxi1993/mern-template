@@ -4,11 +4,12 @@ $linkColor: #f5004c;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 65px);
+    min-height: calc(100vh - 65px);
 }
 
 .mt-auth__form-container {
-    padding-bottom: 80px;
+    padding-top: 25px;
+    padding-bottom: 100px;
     width: 400px;
 }
 
