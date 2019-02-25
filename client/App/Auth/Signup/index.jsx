@@ -75,9 +75,9 @@ class Signup extends Component {
                                 />
                                 <label htmlFor='privacy'>
                                     I agree to the&nbsp;
-                                    <Link to='signup' className='mt-auth__action-link'>Terms of Service</Link>
+                                    <Link to='terms' className='mt-auth__action-link' target='_blank'>Terms of Service</Link>
                                     &nbsp;and&nbsp;
-                                    <Link to='signup' className='mt-auth__action-link'>Privacy Policy</Link>
+                                    <Link to='privacy' className='mt-auth__action-link' target='_blank'>Privacy Policy</Link>
                                 </label>
                             </p>
                             <Button
