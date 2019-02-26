@@ -1,4 +1,5 @@
 $svgColor: #909090;
+$linkColor: #929292;
 
 .mt-footer {
     width: 100%;
@@ -7,7 +8,38 @@ $svgColor: #909090;
 
 .mt-footer__info {
     background-color: #353535;
-    height: 200px;
+    padding: 1rem 0;
+    min-height: 200px;
+}
+
+.mt-footer__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mt-footer__section {
+    padding: 0 0.5rem 0.5rem;
+    margin-bottom: 25px;
+}
+
+.mt-footer__list-item {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.mt-footer__item-link {
+    text-decoration: none;
+    color: #929292;
+
+    &:hover {
+        transition: all .5s ease;
+        color: lighten($color: $linkColor, $amount: 20%);
+    }
+}
+
+.mt-footer__section-title {
+    text-transform: uppercase;
 }
 
 .mt-footer__social {
@@ -23,7 +55,7 @@ $svgColor: #909090;
     justify-content: center;
 }
 
-.mt-footer__list-item {
+.mt-footer__social-item {
     width: 30px;
     height: 30px;
 
@@ -40,6 +72,7 @@ $svgColor: #909090;
     fill: $svgColor;
 
     &:hover {
+        transition: all .5s ease;
         fill: lighten($color: $svgColor, $amount: 20%);
     }
 }
