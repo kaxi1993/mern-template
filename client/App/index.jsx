@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Navbar from './Common/Navbar'
 import Footer from './Common/Footer'
 import Auth from './Auth'
+import Dashboard from './Dashboard'
 import Confidentiality from './Confidentiality'
 
 import './normalize.scss'
