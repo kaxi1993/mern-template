@@ -2,11 +2,16 @@ const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
+const passport = require('passport')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const logger = require('morgan')
 
+const {
+    jwtLogin,
+    localLogin
+} = require('./auth/auth-middleware')
 const devConfig = require('../webpack.dev.js')
 
 const app = express()
@@ -17,6 +22,10 @@ app.use(bodyParser.urlencoded({
     extended: false
 }))
 app.use(cookieParser())
+
+// Apply passport middleware
+passport.use(jwtLogin)
+passport.use(localLogin)
 
 if (process.env.NODE_ENV === 'development') {
     const compiler = webpack(devConfig)
