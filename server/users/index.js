@@ -8,7 +8,7 @@ const {
 
 const {
     validateUser
-} = require('./user-validations')
+} = require('./user-validation')
 
 const router = Router()
 

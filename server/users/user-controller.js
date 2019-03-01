@@ -20,7 +20,7 @@ const createUser = async (req, res) => {
 
         const {
             _id
-        } = await new User(newUser)
+        } = await new User(newUser).save()
 
         res.json({
             _id,
