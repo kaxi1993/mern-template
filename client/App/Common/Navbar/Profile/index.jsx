@@ -11,7 +11,7 @@ class Profile extends Component {
 
         this.state = {
             user: {
-                fullName: 'Lasha Kakhidze',
+                name: 'Lasha Kakhidze',
                 avatarUrl: '/avatar.png'
             },
             open: false
@@ -34,7 +34,7 @@ class Profile extends Component {
 
         const {
             avatarUrl,
-            fullName
+            name
         } = user
 
         return (
@@ -46,7 +46,7 @@ class Profile extends Component {
                         borderRadius: 0
                     }}
                 >
-                    <Avatar alt={fullName} src={avatarUrl} className='mt-header__avatar' style={{
+                    <Avatar alt={name} src={avatarUrl} className='mt-header__avatar' style={{
                         width: 30,
                         height: 30
                     }} />

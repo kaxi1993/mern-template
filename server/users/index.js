@@ -6,8 +6,12 @@ const {
     createUser
 } = require('./user-controller')
 
+const {
+    validateUser
+} = require('./user-validations')
+
 const router = Router()
 
-router.post('/users', createUser)
+router.post('/users', validateUser, createUser)
 
 module.exports = router
