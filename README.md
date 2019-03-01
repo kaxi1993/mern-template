@@ -5,6 +5,8 @@
 
 **mern-temlate** is a cli tool for generating MERN boilerplate
 
+> This is a BETA release, major release and full documentation coming soon...
+
 ## Installation
 ```bash
 npx mern-template my-app
