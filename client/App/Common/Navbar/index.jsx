@@ -39,7 +39,7 @@ class Navbar extends Component {
                                 <div className='mt-header__actions-container'>
                                     <ul className='mt-header__actions'>
                                         <li className='mt-header__action'>
-                                            <NavLink to='/login' className='mt-header__action-link'>
+                                            <NavLink to='/' className='mt-header__action-link'>
                                                 Log in
                                             </NavLink>
                                         </li>

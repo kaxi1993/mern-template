@@ -11,7 +11,7 @@ import './Auth.scss'
 function Auth () {
     return (
         <div className='mt-container'>
-            <Route path='/login' component={Login} />
+            <Route exact path='/' component={Login} />
             <Route path='/signup' component={Signup} />
             <Route path='/forgot' component={Forgot} />
             <Route path='/reset' component={Reset} />
