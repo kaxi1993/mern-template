@@ -1,6 +1,6 @@
 const joi = require('joi')
 
-const validateUser = (req, res, next) => {
+const validateCreateUser = (req, res, next) => {
     const user = req.body
 
     const schema = joi.object().keys({
@@ -30,5 +30,5 @@ const validateUser = (req, res, next) => {
 }
 
 module.exports = {
-    validateUser
+    validateCreateUser
 }

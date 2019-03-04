@@ -7,11 +7,11 @@ const {
 } = require('./user-controller')
 
 const {
-    validateUser
+    validateCreateUser
 } = require('./user-validation')
 
 const router = Router()
 
-router.post('/users', validateUser, createUser)
+router.post('/users', validateCreateUser, createUser)
 
 module.exports = router

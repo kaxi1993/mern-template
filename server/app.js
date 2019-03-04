@@ -27,6 +27,9 @@ app.use(cookieParser())
 passport.use(jwtLogin)
 passport.use(localLogin)
 
+// Apply API Routes
+require('./routes')(app)
+
 if (process.env.NODE_ENV === 'development') {
     const compiler = webpack(devConfig)
 
