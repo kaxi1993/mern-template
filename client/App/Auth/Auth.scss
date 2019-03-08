@@ -9,7 +9,7 @@ $linkColor: #f5004c;
 
 .mt-auth__form-container {
     padding-top: 25px;
-    padding-bottom: 100px;
+    padding-bottom: 140px;
     width: 400px;
 }
 
@@ -23,6 +23,16 @@ $linkColor: #f5004c;
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 13px;
+}
+
+.mt-auth__error {
+    padding: .75rem 1.25rem;
+    margin: 1rem 0;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #b52a37;
+    background-color: #ffd4d8;
+    border-color: #fbb6be;
 }
 
 .mt-auth__actions {

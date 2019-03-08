@@ -17,8 +17,10 @@ function* signup (action) {
         const response = yield call(Api.signup, action.payload)
         const payload = response ? response.data : {}
 
+        const type = payload.status === 'ok' ? SIGNUP_SUCCESS : SIGNUP_FAILURE
+
         yield put({
-            type: SIGNUP_SUCCESS,
+            type,
             payload
         })
     } catch (e) {

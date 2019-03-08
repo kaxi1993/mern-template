@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { TextField, Button, Checkbox } from '@material-ui/core'
+import { TextField, Button } from '@material-ui/core'
 
 import {
     SIGNUP_REQUEST
@@ -17,27 +17,14 @@ class Signup extends Component {
         this.state = {
             name: '',
             email: '',
-            password: '',
-            privacy: false
+            password: ''
         }
 
-        this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
-        this.handleInputChange = this.handleInputChange.bind(this)
+        this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    componentDidUpdate (oldProps) {
-        if (this.props.isLoading !== oldProps.isLoading) {
-        }
-    }
-
-    handleCheckboxChange () {
-        this.setState(state => ({
-            privacy: !state.privacy
-        }))
-    }
-
-    handleInputChange (event) {
+    handleChange (event) {
         const { name, value } = event.target
 
         this.setState({
@@ -48,15 +35,28 @@ class Signup extends Component {
     handleSubmit (e) {
         e.preventDefault()
 
+        if (this.props.isLoading) {
+            return
+        }
+
         const { name, email, password } = this.state
 
         this.props.dispatch({ type: SIGNUP_REQUEST, payload: { name, email, password } })
     }
 
     render () {
+        const { error } = this.props
+
         return (
             <div className='mt-signup mt-auth'>
                 <div className='mt-auth__form-container'>
+                    {
+                        error && (
+                            <div className='mt-auth__error'>
+                                {error.message}
+                            </div>
+                        )
+                    }
                     <h2 className='mt-auth__title'>Sign up</h2>
                     <form className='mt-auth__form' onSubmit={this.handleSubmit}>
                         <TextField
@@ -67,7 +67,8 @@ class Signup extends Component {
                             variant='outlined'
                             required={true}
                             fullWidth={true}
-                            onChange={this.handleInputChange}
+                            error={error && error.field === 'name'}
+                            onChange={this.handleChange}
                         />
                         <TextField
                             label='Email'
@@ -78,7 +79,8 @@ class Signup extends Component {
                             variant='outlined'
                             required={true}
                             fullWidth={true}
-                            onChange={this.handleInputChange}
+                            error={error && error.field === 'email'}
+                            onChange={this.handleChange}
                         />
                         <TextField
                             label='Password'
@@ -88,27 +90,15 @@ class Signup extends Component {
                             variant='outlined'
                             required={true}
                             fullWidth={true}
-                            onChange={this.handleInputChange}
+                            error={error && error.field === 'password'}
+                            onChange={this.handleChange}
                         />
                         <div className='mt-auth__actions'>
                             <p className='mt-signup__privacy'>
-                                <Checkbox
-                                    checked={this.state.privacy}
-                                    onChange={this.handleCheckboxChange}
-                                    value='privacy'
-                                    color='primary'
-                                    id='privacy'
-                                    style={{
-                                        padding: 0,
-                                        paddingRight: 5
-                                    }}
-                                />
-                                <label htmlFor='privacy'>
-                                    I agree to the&nbsp;
-                                    <Link to='terms' className='mt-auth__action-link' target='_blank'>Terms of Service</Link>
-                                    &nbsp;and&nbsp;
-                                    <Link to='privacy' className='mt-auth__action-link' target='_blank'>Privacy Policy</Link>
-                                </label>
+                                By clicking "Create new account" below, you agree to our&nbsp;
+                                <Link to='terms' className='mt-auth__action-link' target='_blank'>Terms of Service</Link>
+                                &nbsp;and&nbsp;
+                                <Link to='privacy' className='mt-auth__action-link' target='_blank'>Privacy Policy</Link>
                             </p>
                             <Button
                                 type='submit'

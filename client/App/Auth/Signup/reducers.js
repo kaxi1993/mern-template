@@ -28,10 +28,20 @@ export default (state = initialState, action) => {
             }
             break
         case SIGNUP_FAILURE:
-            newState = {
-                ...state,
-                isLoading: false,
-                error: true
+            {
+                const {
+                    message,
+                    field
+                } = action.payload
+
+                newState = {
+                    ...state,
+                    isLoading: false,
+                    error: {
+                        message,
+                        field
+                    }
+                }
             }
             break
         default:
