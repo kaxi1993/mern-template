@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 import { TextField, Button } from '@material-ui/core'
 
@@ -22,6 +22,23 @@ class Signup extends Component {
 
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.redirectToLoginPage = this.redirectToLoginPage.bind(this)
+    }
+
+    componentDidUpdate (oldProps) {
+        if (this.props._id !== oldProps._id) {
+            this.redirectToLoginPage()
+        }
+    }
+
+    redirectToLoginPage () {
+        this.setState({
+            name: '',
+            email: '',
+            password: ''
+        })
+
+        this.props.history.push('/login?m=Registration was successful! Please login!')
     }
 
     handleChange (event) {
@@ -122,12 +139,13 @@ class Signup extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { isLoading, error } = state.signup
+    const { _id, isLoading, error } = state.signup
 
     return {
+        _id,
         isLoading,
         error
     }
 }
 
-export default connect(mapStateToProps, null)(Signup)
+export default withRouter(connect(mapStateToProps, null)(Signup))

@@ -23,6 +23,7 @@ export default (state = initialState, action) => {
         case SIGNUP_SUCCESS:
             newState = {
                 ...state,
+                _id: action.payload._id,
                 isLoading: false,
                 error: null
             }
