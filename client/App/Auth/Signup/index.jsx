@@ -67,13 +67,11 @@ class Signup extends Component {
         return (
             <div className='mt-signup mt-auth'>
                 <div className='mt-auth__form-container'>
-                    {
-                        error && (
-                            <div className='mt-auth__error'>
-                                {error.message}
-                            </div>
-                        )
-                    }
+                    {error && (
+                        <div className='mt-auth__error'>
+                            {error.message}
+                        </div>
+                    )}
                     <h2 className='mt-auth__title'>Sign up</h2>
                     <form className='mt-auth__form' onSubmit={this.handleSubmit}>
                         <TextField

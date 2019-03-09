@@ -34,22 +34,28 @@ const jwtLogin = new Strategy(jwtOptions, async (payload, done) => {
 const localLogin = new LocalStrategy({
     usernameField: 'email'
 }, async (email, password, done) => {
+    const message = 'Incorrect username or password'
+
     try {
         const user = await User.findOne({
             email
         })
 
         if (!user) {
-            return done(null, false)
+            return done(null, false, {
+                message
+            })
         }
 
-        User.comparePassword(password, (error, isMatch) => {
+        user.comparePassword(password, (error, isMatch) => {
             if (error) {
                 return done(error, false)
             }
 
             if (!isMatch) {
-                return done(null, false)
+                return done(null, false, {
+                    message
+                })
             }
 
             return done(null, user)
