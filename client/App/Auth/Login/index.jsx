@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
+import queryString from 'query-string'
 
 import { TextField, Button } from '@material-ui/core'
 
@@ -16,18 +17,29 @@ class Login extends Component {
 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            search: ''
         }
 
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    componentDidMount () {
+        const query = queryString.parse(this.props.location.search)
+        const search = query ? query.message : ''
+
+        this.setState({
+            search
+        })
+    }
+
     componentDidUpdate (oldProps) {
-        const { token } = this.props
+        const { token, user } = this.props
 
         if (token !== oldProps.token) {
             localStorage.setItem('token', token)
+            localStorage.setItem('user', JSON.stringify(user))
         }
     }
 
@@ -46,6 +58,10 @@ class Login extends Component {
             return
         }
 
+        this.setState({
+            search: ''
+        })
+
         const { email, password } = this.state
 
         this.props.dispatch({ type: LOGIN_REQUEST, payload: { email, password } })
@@ -53,11 +69,17 @@ class Login extends Component {
 
 
     render () {
+        const { search } = this.state
         const { error } = this.props
 
         return (
             <div className='mt-login mt-auth'>
                 <div className='mt-auth__form-container'>
+                    {!error && search && (
+                        <div className='mt-auth__success'>
+                            {search}
+                        </div>
+                    )}
                     {error && (
                         <div className='mt-auth__error'>
                             {error.message}

@@ -34,7 +34,7 @@ const jwtLogin = new Strategy(jwtOptions, async (payload, done) => {
 const localLogin = new LocalStrategy({
     usernameField: 'email'
 }, async (email, password, done) => {
-    const message = 'Incorrect username or password'
+    const message = 'Incorrect email or password'
 
     try {
         const user = await User.findOne({

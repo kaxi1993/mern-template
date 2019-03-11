@@ -38,7 +38,7 @@ class Signup extends Component {
             password: ''
         })
 
-        this.props.history.push('/login?m=Registration was successful! Please login!')
+        this.props.history.push('/login?message=Registration was successful! Please login!')
     }
 
     handleChange (event) {

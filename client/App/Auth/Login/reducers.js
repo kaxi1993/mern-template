@@ -21,11 +21,19 @@ export default (state = initialState, action) => {
             }
             break
         case LOGIN_SUCCESS:
-            newState = {
-                ...state,
-                token: action.payload.token,
-                isLoading: false,
-                error: null
+            {
+                const {
+                    token,
+                    user
+                } = action.payload
+
+                newState = {
+                    ...state,
+                    token,
+                    user,
+                    isLoading: false,
+                    error: null
+                }
             }
             break
         case LOGIN_FAILURE:

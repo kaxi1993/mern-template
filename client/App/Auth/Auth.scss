@@ -25,11 +25,21 @@ $linkColor: #f5004c;
     font-size: 13px;
 }
 
+.mt-auth__success,
 .mt-auth__error {
     padding: .75rem 1.25rem;
     margin: 1rem 0;
     border: 1px solid transparent;
     border-radius: .25rem;
+}
+
+.mt-auth__success {
+    color: #145a24;
+    background-color: #d3eed9;
+    border-color: #c1e6ca;
+}
+
+.mt-auth__error {
     color: #b52a37;
     background-color: #ffd4d8;
     border-color: #fbb6be;
