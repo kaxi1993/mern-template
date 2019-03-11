@@ -24,29 +24,8 @@ const requireLogin = (req, res, next) => {
     passport.authenticate('local', {
         session: false
     }, (err, user, info) => {
-        const {
-            email,
-            password
-        } = req.body
-
         if (err) {
             return next(err)
-        }
-
-        if (!email) {
-            return res.json({
-                message: 'Email required',
-                status: 'fail',
-                field: 'email'
-            })
-        }
-
-        if (!password) {
-            return res.json({
-                message: 'Password required',
-                status: 'fail',
-                field: 'password'
-            })
         }
 
         if (!user) {
@@ -56,13 +35,7 @@ const requireLogin = (req, res, next) => {
             })
         }
 
-        req.logIn(user, (error) => {
-            if (error) {
-                return next(error)
-            }
-
-            return next()
-        })
+        next()
     })(req, res, next)
 }
 
