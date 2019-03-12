@@ -21,7 +21,7 @@ const jwtLogin = new Strategy(jwtOptions, async (payload, done) => {
 
         if (!payload.exp || payload.exp <= Date.now()) {
             return done(null, false, {
-                message: 'Token expired'
+                message: 'Token has expired'
             })
         }
 

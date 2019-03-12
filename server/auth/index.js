@@ -4,7 +4,9 @@ const {
 
 const {
     logIn,
-    requireLogin
+    requireLogin,
+    requireAuth,
+    checkStatus
 } = require('./auth-controller')
 
 const {
@@ -13,6 +15,7 @@ const {
 
 const router = Router()
 
+router.get('/status', requireAuth, checkStatus)
 router.post('/login', validateAuth, requireLogin, logIn)
 
 module.exports = router

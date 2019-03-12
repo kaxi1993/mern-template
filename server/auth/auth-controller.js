@@ -66,8 +66,13 @@ const logIn = async (req, res) => {
     }
 }
 
+const checkStatus = (req, res) => res.json({
+    isAuthenticated: req.isAuthenticated()
+})
+
 module.exports = {
     logIn,
     requireAuth,
-    requireLogin
+    requireLogin,
+    checkStatus
 }
