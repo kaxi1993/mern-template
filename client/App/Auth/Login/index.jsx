@@ -127,11 +127,11 @@ class Login extends Component {
                                 Log in
                             </Button>
                             <p className='mt-login__forgot'>
-                                <Link to='forgot' className='mt-auth__action-link'>Forgot your password?</Link>
+                                <Link to='/forgot' className='mt-auth__action-link'>Forgot your password?</Link>
                             </p>
                             <p className='mt-login__signup'>
                                 Don't have an account?&nbsp;
-                                <Link to='signup' className='mt-auth__action-link'>Sign up</Link>
+                                <Link to='/signup' className='mt-auth__action-link'>Sign up</Link>
                             </p>
                         </div>
                     </form>

@@ -50,10 +50,10 @@ function Footer () {
                             </h5>
                             <ul className='mt-footer__section-list'>
                                 <li className='mt-footer__list-item'>
-                                    <Link to='terms' className='mt-footer__item-link'>Terms of Service</Link>
+                                    <Link to='/terms' className='mt-footer__item-link'>Terms of Service</Link>
                                 </li>
                                 <li className='mt-footer__list-item'>
-                                    <Link to='privacy' className='mt-footer__item-link'>Privacy Policy</Link>
+                                    <Link to='/privacy' className='mt-footer__item-link'>Privacy Policy</Link>
                                 </li>
                                 <li className='mt-footer__list-item'>
                                     <a href='#' className='mt-footer__item-link'>FAQ</a>

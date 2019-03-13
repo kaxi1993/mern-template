@@ -111,9 +111,9 @@ class Signup extends Component {
                         <div className='mt-auth__actions'>
                             <p className='mt-signup__privacy'>
                                 By clicking "Create new account" below, you agree to our&nbsp;
-                                <Link to='terms' className='mt-auth__action-link' target='_blank'>Terms of Service</Link>
+                                <Link to='/terms' className='mt-auth__action-link'>Terms of Service</Link>
                                 &nbsp;and&nbsp;
-                                <Link to='privacy' className='mt-auth__action-link' target='_blank'>Privacy Policy</Link>
+                                <Link to='/privacy' className='mt-auth__action-link'>Privacy Policy</Link>
                             </p>
                             <Button
                                 type='submit'

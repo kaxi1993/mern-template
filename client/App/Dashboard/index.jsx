@@ -14,7 +14,6 @@ function Dashboard () {
                 <Route exact path='/app' component={Home} />
                 <Route path='/app/profile' component={Profile} />
                 <Route path='/app/settings' component={Settings} />
-                <Redirect from='/' to='/app' />
             </Switch>
         </div>
     )
