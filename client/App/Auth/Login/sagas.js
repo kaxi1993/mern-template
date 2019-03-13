@@ -5,6 +5,9 @@ import {
 } from 'redux-saga/effects'
 
 import {
+    LOG_IN
+} from '../constants'
+import {
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
     LOGIN_FAILURE
@@ -23,6 +26,12 @@ function* login (action) {
             type,
             payload
         })
+
+        if (type === LOGIN_SUCCESS) {
+            yield put({
+                type: LOG_IN
+            })
+        }
     } catch (e) {
         yield put({
             type: LOGIN_FAILURE,

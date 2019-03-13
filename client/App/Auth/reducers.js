@@ -1,12 +1,13 @@
 import {
     CHECK_AUTH_STATUS_REQUEST,
     CHECK_AUTH_STATUS_SUCCESS,
-    CHECK_AUTH_STATUS_FAILURE
+    CHECK_AUTH_STATUS_FAILURE,
+    LOG_IN,
+    LOG_OUT
 } from './constants'
 
 const initialState = {
-    isLoading: false,
-    error: null
+    isAuthenticated: null
 }
 
 export default (state = initialState, action) => {
@@ -26,6 +27,18 @@ export default (state = initialState, action) => {
             }
             break
         case CHECK_AUTH_STATUS_FAILURE:
+            newState = {
+                ...state,
+                isAuthenticated: false
+            }
+            break
+        case LOG_IN:
+            newState = {
+                ...state,
+                isAuthenticated: true
+            }
+            break
+        case LOG_OUT:
             newState = {
                 ...state,
                 isAuthenticated: false

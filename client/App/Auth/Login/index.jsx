@@ -40,6 +40,8 @@ class Login extends Component {
         if (token !== oldProps.token) {
             localStorage.setItem('token', token)
             localStorage.setItem('user', JSON.stringify(user))
+
+            this.props.history.push('/app')
         }
     }
 
@@ -94,7 +96,7 @@ class Login extends Component {
                             autoComplete='email'
                             margin='normal'
                             variant='outlined'
-                            // required={true}
+                            required={true}
                             fullWidth={true}
                             error={error && error.field === 'email'}
                             onChange={this.handleChange}
@@ -105,7 +107,7 @@ class Login extends Component {
                             name='password'
                             margin='normal'
                             variant='outlined'
-                            // required={true}
+                            required={true}
                             fullWidth={true}
                             error={error && error.field === 'password'}
                             onChange={this.handleChange}
@@ -140,13 +142,19 @@ class Login extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { token, isLoading, error } = state.login
+    const {
+        token,
+        user,
+        isLoading,
+        error
+    } = state.login
 
     return {
         token,
+        user,
         isLoading,
         error
     }
 }
 
-export default withRouter(connect(mapStateToProps, null)(Login))
+export default withRouter(connect(mapStateToProps)(Login))
