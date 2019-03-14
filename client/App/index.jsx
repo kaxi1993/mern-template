@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Route, Redirect } from 'react-router-dom'
 
 import Navbar from './Common/Navbar'
 import Footer from './Common/Footer'
@@ -29,12 +29,10 @@ class App extends Component {
         if (token) {
             this.props.dispatch({ type: CHECK_AUTH_STATUS_REQUEST, payload: { token } })
         } else {
-            this.props.history.push('/login')
-
             // add custom delay to wait for font download
             setTimeout(() => {
                 this.setState({ isLoading: false })
-            }, 1000)
+            }, 700)
         }
     }
 
@@ -71,6 +69,9 @@ class App extends Component {
             <div className='App'>
                 <Navbar />
                 <div className='mt-content'>
+                    <Route exact path='/' render={() => (
+                        !isAuthenticated ? (<Redirect to='/login' />) : (<Redirect to='/app' />)
+                    )} />
                     <Auth />
                     <Dashboard />
                     <Confidentiality />

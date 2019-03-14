@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import Home from './Home'
 import Profile from './Profile'
@@ -10,11 +10,9 @@ import './Dashboard.scss'
 function Dashboard () {
     return (
         <div className='mt-dashboard'>
-            <Switch>
-                <Route exact path='/app' component={Home} />
-                <Route path='/app/profile' component={Profile} />
-                <Route path='/app/settings' component={Settings} />
-            </Switch>
+            <Route exact path='/app' component={Home} />
+            <Route path='/app/profile' component={Profile} />
+            <Route path='/app/settings' component={Settings} />
         </div>
     )
 }
