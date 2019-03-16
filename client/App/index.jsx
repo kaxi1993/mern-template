@@ -70,7 +70,7 @@ class App extends Component {
                 <Navbar />
                 <div className='mt-content'>
                     <Route exact path='/' render={() => (
-                        !isAuthenticated ? (<Redirect to='/login' />) : (<Redirect to='/app' />)
+                        !isAuthenticated ? <Redirect to='/login' /> : <Redirect to='/app' />
                     )} />
                     <Auth />
                     <Dashboard />

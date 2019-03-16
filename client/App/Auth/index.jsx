@@ -1,5 +1,6 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { withRouter, Route, Redirect } from 'react-router-dom'
 
 import Login from './Login'
 import Signup from './Signup'
@@ -8,9 +9,12 @@ import Reset from './Reset'
 
 import './Auth.scss'
 
-function Auth () {
+function Auth ({ isAuthenticated }) {
     return (
         <div className='mt-container'>
+            <Route path='/(login|signup|forgot|reset)' render={() => (
+                isAuthenticated && <Redirect to='/app' />
+            )} />
             <Route path='/login' component={Login} />
             <Route path='/signup' component={Signup} />
             <Route path='/forgot' component={Forgot} />
@@ -19,4 +23,12 @@ function Auth () {
     )
 }
 
-export default Auth
+const mapStateToProps = (state) => {
+    const { isAuthenticated } = state.auth
+
+    return {
+        isAuthenticated
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(Auth))
