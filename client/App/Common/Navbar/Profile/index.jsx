@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Avatar from '@material-ui/core/Avatar'
-import Button from '@material-ui/core/Button'
+import { Avatar, Button } from '@material-ui/core'
 
 import Menu from './Menu'
 

@@ -32,7 +32,7 @@ class App extends Component {
             // add custom delay to wait for font download
             setTimeout(() => {
                 this.setState({ isLoading: false })
-            }, 700)
+            }, 500)
         }
     }
 
