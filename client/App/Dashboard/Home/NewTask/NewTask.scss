@@ -1,0 +1,19 @@
+$addIconColor: #808080;
+
+.mt-new-task__add {
+    display: flex;
+    align-items: center;
+    color: $addIconColor;
+    cursor: pointer;
+
+    &:hover {
+        color: darken($color: $addIconColor, $amount: 20%);
+        .mt-new-task__add-icon {
+            fill: darken($color: $addIconColor, $amount: 20%);
+        }
+    }
+}
+
+.mt-new-task__add-icon {
+    fill: $addIconColor;
+}

@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 
+import NewTask from './NewTask'
+
+import './Home.scss'
+
 class Home extends Component {
     constructor (props) {
         super(props)
@@ -10,9 +14,11 @@ class Home extends Component {
     }
 
     render () {
+        const { name } = this.state
+
         return (
-            <div className='mt-profile'>
-                {this.state.name}
+            <div className='mt-home'>
+                <NewTask />
             </div>
         )
     }
