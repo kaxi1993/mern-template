@@ -33,10 +33,10 @@ const createTask = async (req, res) => {
             user
         }
 
-        const _id = await new Task(newTask).save()
+        const task = await new Task(newTask).save()
 
         res.json({
-            _id,
+            task,
             status: 'ok'
         })
     } catch (e) {

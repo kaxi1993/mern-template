@@ -16,12 +16,14 @@ const validateCreateTask = (req, res, next) => {
     }
 
     const {
-        message
+        message,
+        context
     } = error.details[0]
 
     res.json({
         message,
-        status: 'fail'
+        status: 'fail',
+        field: context.key
     })
 }
 
