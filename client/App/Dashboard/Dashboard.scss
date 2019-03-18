@@ -1,3 +1,18 @@
-.mt-dashboard {
 
+.mt-dashboard {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 61.25rem;
+    padding: 2rem 1rem;
+    background-color: #ffffff;
+    min-height: calc(100vh - 65px);
+}
+
+@media (min-width: 76.25em) {
+    .mt-dashboard {
+        max-width: 72rem;
+        padding: 2rem 1.25rem;
+    }
 }
