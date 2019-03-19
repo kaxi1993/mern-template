@@ -8,7 +8,7 @@ const getTasks = async (req, res) => {
     try {
         const tasks = await Task.find({
             user
-        })
+        }).sort({ createdAt: -1 })
 
         res.json({
             tasks,

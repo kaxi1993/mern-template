@@ -1,27 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import NewTask from './NewTask'
+import TaskList from './TaskList'
 
 import './Home.scss'
 
-class Home extends Component {
-    constructor (props) {
-        super(props)
-
-        this.state = {
-            name: 'App'
-        }
-    }
-
-    render () {
-        const { name } = this.state
-
-        return (
-            <div className='mt-home'>
-                <NewTask />
-            </div>
-        )
-    }
+function Home () {
+    return (
+        <div className='mt-home'>
+            <NewTask />
+            <TaskList />
+        </div>
+    )
 }
 
 export default Home
