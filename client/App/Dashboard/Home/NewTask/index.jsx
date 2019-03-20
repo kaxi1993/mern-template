@@ -71,7 +71,7 @@ class NewTask extends Component {
         return (
             <div className='mt-new-task__form-container'>
                 {error && (
-                    <div className='mt-auth__info mt-auth__info--error'>
+                    <div className='mt-info mt-info--error'>
                         {error.message}
                     </div>
                 )}

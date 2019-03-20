@@ -32,7 +32,7 @@ const validateUpdateTask = (req, res, next) => {
 
     const schema = joi.object().keys({
         title: joi.string().required(),
-        status: joi.string().required().allowOnly(['TODO', 'DONE'])
+        status: joi.string().valid('TODO', 'DONE').required()
     })
 
     const {
@@ -44,12 +44,14 @@ const validateUpdateTask = (req, res, next) => {
     }
 
     const {
-        message
+        message,
+        context
     } = error.details[0]
 
     res.json({
         message,
-        status: 'fail'
+        status: 'fail',
+        field: context.key
     })
 }
 

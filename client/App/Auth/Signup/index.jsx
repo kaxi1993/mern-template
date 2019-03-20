@@ -68,7 +68,7 @@ class Signup extends Component {
             <div className='mt-signup mt-auth'>
                 <div className='mt-auth__form-container'>
                     {error && (
-                        <div className='mt-auth__info mt-auth__info--error'>
+                        <div className='mt-info mt-info--error'>
                             {error.message}
                         </div>
                     )}

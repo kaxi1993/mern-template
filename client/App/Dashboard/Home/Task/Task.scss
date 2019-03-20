@@ -2,10 +2,17 @@ $todoColor: #7d7d7d;
 $doneColor: #249024;
 
 .mt-task {
+    position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
     align-content: center;
+
+    &:hover {
+        .mt-task__action-delete {
+            visibility: visible;
+        }
+    }
 }
 
 .mt-task__status {
@@ -32,4 +39,15 @@ $doneColor: #249024;
 .mt-task__title {
     margin-top: 3px;
     margin-bottom: 3px;
+}
+
+.mt-task__action-delete {
+    position: absolute;
+    right: 10px;
+    fill: #545454;
+    cursor: pointer;
+    visibility: hidden;
+    background: none;
+    border: none;
+    outline: none;
 }

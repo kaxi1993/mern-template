@@ -70,9 +70,10 @@ const updateTask = async (req, res) => {
         task.title = title
         task.status = status
 
-        await task.update()
+        const updatedTask = await task.save()
 
         res.json({
+            task: updatedTask,
             status: 'ok'
         })
     } catch (e) {
@@ -102,6 +103,7 @@ const deleteTask = async (req, res) => {
         }
 
         res.json({
+            _id: taskId,
             status: 'ok'
         })
     } catch (e) {

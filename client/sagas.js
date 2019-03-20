@@ -2,18 +2,21 @@ import {
     spawn
 } from 'redux-saga/effects'
 
-import authSagas from './App/Auth/sagas'
-import loginSagas from './App/Auth/Login/sagas'
-import signupSagas from './App/Auth/Signup/sagas'
-import newTaskSagas from './App/Dashboard/Home/NewTask/sagas'
-import getTasksSagas from './App/Dashboard/Home/TaskList/sagas'
+import authSaga from './App/Auth/sagas'
+import loginSaga from './App/Auth/Login/sagas'
+import signupSaga from './App/Auth/Signup/sagas'
+import addTaskSaga from './App/Dashboard/Home/NewTask/sagas'
+import getTasksSaga from './App/Dashboard/Home/TaskList/sagas'
+import { updateTaskSaga, deleteTaskSaga } from './App/Dashboard/Home/Task/sagas'
 
 function* sagas () {
-    yield spawn(authSagas)
-    yield spawn(loginSagas)
-    yield spawn(signupSagas)
-    yield spawn(newTaskSagas)
-    yield spawn(getTasksSagas)
+    yield spawn(authSaga)
+    yield spawn(loginSaga)
+    yield spawn(signupSaga)
+    yield spawn(addTaskSaga)
+    yield spawn(getTasksSaga)
+    yield spawn(updateTaskSaga)
+    yield spawn(deleteTaskSaga)
 }
 
 export default sagas
