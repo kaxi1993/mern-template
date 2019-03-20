@@ -48,7 +48,11 @@ class Task extends Component {
 
         const { task } = this.state
 
-        this.props.dispatch({ type: UPDATE_TASK_REQUEST, payload: task })
+        if (task.title !== this.props.task.title) {
+            this.props.dispatch({ type: UPDATE_TASK_REQUEST, payload: task })
+        } else {
+            this.cancelEditing()
+        }
     }
 
     updateTaskStatus () {
