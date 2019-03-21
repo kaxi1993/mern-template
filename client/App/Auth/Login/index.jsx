@@ -38,7 +38,7 @@ class Login extends Component {
         const { token, user } = this.props
 
         if (token !== oldProps.token) {
-            localStorage.setItem('token', token)
+            localStorage.setItem('token', `Bearer ${token}`)
             localStorage.setItem('user', JSON.stringify(user))
 
             this.props.history.push('/app')
