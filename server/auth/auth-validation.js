@@ -30,6 +30,36 @@ const validateAuth = (req, res, next) => {
     })
 }
 
+const validateForgot = (req, res, next) => {
+    const {
+        body
+    } = req
+
+    const schema = joi.object().keys({
+        email: joi.string().email().required()
+    })
+
+    const {
+        error
+    } = joi.validate(body, schema)
+
+    if (!error) {
+        return next()
+    }
+
+    const {
+        message,
+        context
+    } = error.details[0]
+
+    res.json({
+        message,
+        status: 'fail',
+        field: context.key
+    })
+}
+
 module.exports = {
-    validateAuth
+    validateAuth,
+    validateForgot
 }

@@ -3,11 +3,13 @@ const passport = require('passport')
 const signale = require('signale')
 
 const User = require('../users/user-model')
+const {
+    sendEmail
+} = require('./auth-service')
 
-const tokenizeUser = (user) => {
-    const sub = user._id
+const tokenize = (sub) => {
     const iat = Date.now()
-    const exp = Date.now() + Number(process.env.AUTH_EXPIRES_IN)
+    const exp = iat + Number(process.env.AUTH_EXPIRES_IN)
 
     return jwt.encode({
         sub,
@@ -15,6 +17,7 @@ const tokenizeUser = (user) => {
         exp
     }, process.env.JWT_SECRET)
 }
+
 
 const requireAuth = passport.authenticate('jwt', {
     session: false
@@ -49,7 +52,7 @@ const logIn = async (req, res) => {
             email
         })
 
-        const token = tokenizeUser(user)
+        const token = tokenize(user._id)
 
         res.json({
             status: 'ok',
@@ -70,8 +73,41 @@ const checkStatus = (req, res) => res.json({
     isAuthenticated: req.isAuthenticated()
 })
 
+const forgot = async (req, res) => {
+    const {
+        email
+    } = req.body
+
+    try {
+        const user = await User.findOne({
+            email
+        })
+
+        if (!user) {
+            return res.json({
+                message: 'User with this email address not found',
+                status: 'fail',
+                field: 'email'
+            })
+        }
+
+        const token = tokenize(email)
+
+        await sendEmail(email, token)
+
+        res.json({
+            status: 'ok'
+        })
+    } catch (e) {
+        signale.fatal('Error occured in forgot', e)
+
+        res.status(500).send('Internal server error', e)
+    }
+}
+
 module.exports = {
     logIn,
+    forgot,
     requireAuth,
     requireLogin,
     checkStatus
