@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Task from '../Task'
 
 import { GET_TASKS_REQUEST } from './constants'
+import { ADD_TASK_FAILURE } from '../NewTask/constants'
 
 import './TaskList.scss'
 
@@ -19,10 +20,16 @@ class TaskList extends Component {
     }
 
     render () {
+        const { error } = this.props
         const tasks = this.props.tasks.map(task => (<Task key={task._id} task={task} />))
 
         return (
             <div className='mt-task-list'>
+                {error && error.type !== ADD_TASK_FAILURE && (
+                    <div className='mt-info mt-info--error'>
+                        {error.message}
+                    </div>
+                )}
                 {tasks}
             </div>
         )
@@ -30,10 +37,11 @@ class TaskList extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { tasks } = state.home
+    const { tasks, error } = state.home
 
     return {
-        tasks
+        tasks,
+        error
     }
 }
 

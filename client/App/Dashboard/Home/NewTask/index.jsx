@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+
 import { TextField, Button } from '@material-ui/core'
 
-import { ADD_TASK_REQUEST } from './constants'
+import { ADD_TASK_REQUEST, ADD_TASK_FAILURE } from './constants'
 
 import './NewTask.scss'
 
@@ -70,7 +71,7 @@ class NewTask extends Component {
 
         return (
             <div className='mt-new-task__form-container'>
-                {error && (
+                {error && error.type === ADD_TASK_FAILURE && (
                     <div className='mt-info mt-info--error'>
                         {error.message}
                     </div>
@@ -83,6 +84,7 @@ class NewTask extends Component {
                         variant='outlined'
                         required={true}
                         fullWidth={true}
+                        autoFocus={true}
                         value={this.state.title}
                         error={error && error.field === 'title'}
                         onChange={this.handleChange}

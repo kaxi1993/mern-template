@@ -77,7 +77,7 @@ class Task extends Component {
 
     cancelEditing () {
         this.setState({
-            task: this.props.task,
+            task: { ...this.props.task },
             isEditing: false
         })
     }
@@ -123,11 +123,6 @@ class Task extends Component {
 
         return (
             <div className='mt-task__form-container'>
-                {error && (
-                    <div className='mt-info mt-info--error'>
-                        {error.message}
-                    </div>
-                )}
                 <form className='mt-task__form' onSubmit={this.updateTaskTitle}>
                     <TextField
                         label='Task Title'
@@ -136,6 +131,7 @@ class Task extends Component {
                         variant='outlined'
                         required={true}
                         fullWidth={true}
+                        autoFocus={true}
                         value={this.state.task.title}
                         error={error && error.field === 'title'}
                         onChange={this.handleTitleChange}
@@ -166,4 +162,12 @@ class Task extends Component {
     }
 }
 
-export default connect()(Task)
+const mapStateToProps = (state) => {
+    const { error } = state.home
+
+    return {
+        error
+    }
+}
+
+export default connect(mapStateToProps)(Task)

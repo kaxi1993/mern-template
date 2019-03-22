@@ -28,46 +28,15 @@ const initialState = {
 export default (state = initialState, action) => {
     let newState
 
-    switch (action.type) {
-        case ADD_TASK_REQUEST:
-            newState = {
-                ...state,
-                isLoading: true,
-                error: null
-            }
-            break
-        case ADD_TASK_SUCCESS:
-            {
-                const {
-                    task
-                } = action.payload
+    const {
+        type
+    } = action
 
-                newState = {
-                    ...state,
-                    tasks: [task, ...state.tasks],
-                    isLoading: false,
-                    error: null
-                }
-            }
-            break
-        case ADD_TASK_FAILURE:
-            {
-                const {
-                    message,
-                    field
-                } = action.payload
-
-                newState = {
-                    ...state,
-                    isLoading: false,
-                    error: {
-                        message,
-                        field
-                    }
-                }
-            }
-            break
+    switch (type) {
         case GET_TASKS_REQUEST:
+        case ADD_TASK_REQUEST:
+        case UPDATE_TASK_REQUEST:
+        case DELETE_TASK_REQUEST:
             newState = {
                 ...state,
                 isLoading: true,
@@ -88,28 +57,18 @@ export default (state = initialState, action) => {
                 }
             }
             break
-        case GET_TASKS_FAILURE:
+        case ADD_TASK_SUCCESS:
             {
                 const {
-                    message,
-                    field
+                    task
                 } = action.payload
 
                 newState = {
                     ...state,
+                    tasks: [task, ...state.tasks],
                     isLoading: false,
-                    error: {
-                        message,
-                        field
-                    }
+                    error: null
                 }
-            }
-            break
-        case UPDATE_TASK_REQUEST:
-            newState = {
-                ...state,
-                isLoading: true,
-                error: null
             }
             break
         case UPDATE_TASK_SUCCESS:
@@ -134,30 +93,6 @@ export default (state = initialState, action) => {
                 }
             }
             break
-        case UPDATE_TASK_FAILURE:
-            {
-                const {
-                    message,
-                    field
-                } = action.payload
-
-                newState = {
-                    ...state,
-                    isLoading: false,
-                    error: {
-                        message,
-                        field
-                    }
-                }
-            }
-            break
-        case DELETE_TASK_REQUEST:
-            newState = {
-                ...state,
-                isLoading: true,
-                error: null
-            }
-            break
         case DELETE_TASK_SUCCESS:
             {
                 const {
@@ -174,17 +109,23 @@ export default (state = initialState, action) => {
                 }
             }
             break
+        case GET_TASKS_FAILURE:
+        case ADD_TASK_FAILURE:
+        case UPDATE_TASK_FAILURE:
         case DELETE_TASK_FAILURE:
             {
                 const {
-                    message
+                    message,
+                    field
                 } = action.payload
 
                 newState = {
                     ...state,
                     isLoading: false,
                     error: {
-                        message
+                        message,
+                        field,
+                        type
                     }
                 }
             }
