@@ -96,7 +96,8 @@ const forgot = async (req, res) => {
         await sendEmail(email, token)
 
         res.json({
-            status: 'ok'
+            status: 'ok',
+            message: 'Instruction for resetting your password has been sent to your email address'
         })
     } catch (e) {
         signale.fatal('Error occured in forgot', e)

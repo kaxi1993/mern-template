@@ -71,7 +71,7 @@ class Login extends Component {
 
 
     render () {
-        const { search } = this.state
+        const { search, email, password } = this.state
         const { error } = this.props
 
         return (
@@ -98,6 +98,7 @@ class Login extends Component {
                             variant='outlined'
                             required={true}
                             fullWidth={true}
+                            value={email}
                             error={error && error.field === 'email'}
                             onChange={this.handleChange}
                         />
@@ -109,6 +110,7 @@ class Login extends Component {
                             variant='outlined'
                             required={true}
                             fullWidth={true}
+                            value={password}
                             error={error && error.field === 'password'}
                             onChange={this.handleChange}
                         />

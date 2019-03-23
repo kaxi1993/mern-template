@@ -62,6 +62,7 @@ class Signup extends Component {
     }
 
     render () {
+        const { name, email, password } = this.state
         const { error } = this.props
 
         return (
@@ -82,6 +83,7 @@ class Signup extends Component {
                             variant='outlined'
                             required={true}
                             fullWidth={true}
+                            value={name}
                             error={error && error.field === 'name'}
                             onChange={this.handleChange}
                         />
@@ -94,6 +96,7 @@ class Signup extends Component {
                             variant='outlined'
                             required={true}
                             fullWidth={true}
+                            value={email}
                             error={error && error.field === 'email'}
                             onChange={this.handleChange}
                         />
@@ -105,6 +108,7 @@ class Signup extends Component {
                             variant='outlined'
                             required={true}
                             fullWidth={true}
+                            value={password}
                             error={error && error.field === 'password'}
                             onChange={this.handleChange}
                         />
