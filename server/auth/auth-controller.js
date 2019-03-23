@@ -106,9 +106,65 @@ const forgot = async (req, res) => {
     }
 }
 
+const reset = async (req, res) => {
+    const {
+        password,
+        token
+    } = req.body
+
+    let email
+
+    try {
+        const {
+            sub,
+            exp
+        } = jwt.decode(token, process.env.JWT_SECRET)
+
+        if (exp <= Date.now()) {
+            return res.json({
+                message: 'Password reset token expired',
+                fail: true
+            })
+        }
+
+        email = sub
+    } catch (e) {
+        return res.json({
+            message: 'Password reset token invalid',
+            fail: true
+        })
+    }
+
+    try {
+        const user = await User.findOne({
+            email
+        })
+
+        user.password = password
+
+        await user.save()
+
+        const authToken = tokenize(user._id)
+
+        res.json({
+            status: 'ok',
+            token: authToken,
+            user: {
+                email,
+                name: user.name
+            }
+        })
+    } catch (e) {
+        signale.fatal('Error occured in reset', e)
+
+        res.status(500).send('Internal server error', e)
+    }
+}
+
 module.exports = {
     logIn,
     forgot,
+    reset,
     requireAuth,
     requireLogin,
     checkStatus

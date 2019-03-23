@@ -5,6 +5,7 @@ const {
 const {
     logIn,
     forgot,
+    reset,
     requireLogin,
     requireAuth,
     checkStatus
@@ -12,7 +13,8 @@ const {
 
 const {
     validateAuth,
-    validateForgot
+    validateForgot,
+    validateReset
 } = require('./auth-validation')
 
 const router = Router()
@@ -20,5 +22,6 @@ const router = Router()
 router.get('/status', requireAuth, checkStatus)
 router.post('/login', validateAuth, requireLogin, logIn)
 router.post('/forgot', validateForgot, forgot)
+router.post('/reset', validateReset, reset)
 
 module.exports = router
