@@ -34,17 +34,6 @@ class Login extends Component {
         })
     }
 
-    componentDidUpdate (oldProps) {
-        const { token, user } = this.props
-
-        if (token !== oldProps.token) {
-            localStorage.setItem('token', `Bearer ${token}`)
-            localStorage.setItem('user', JSON.stringify(user))
-
-            this.props.history.push('/app')
-        }
-    }
-
     handleChange (event) {
         const { name, value } = event.target
 
@@ -145,14 +134,12 @@ class Login extends Component {
 
 const mapStateToProps = (state) => {
     const {
-        token,
         user,
         isLoading,
         error
     } = state.login
 
     return {
-        token,
         user,
         isLoading,
         error

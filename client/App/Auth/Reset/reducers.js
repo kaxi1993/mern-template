@@ -1,7 +1,7 @@
 import {
-    LOGIN_REQUEST,
-    LOGIN_SUCCESS,
-    LOGIN_FAILURE
+    RESET_REQUEST,
+    RESET_SUCCESS,
+    RESET_FAILURE
 } from './constants'
 
 const initialState = {
@@ -13,33 +13,22 @@ export default (state = initialState, action) => {
     let newState
 
     switch (action.type) {
-        case LOGIN_REQUEST:
+        case RESET_REQUEST:
             newState = {
                 ...state,
+                message: '',
                 isLoading: true,
                 error: null
             }
             break
-        case LOGIN_SUCCESS:
-            {
-                const {
-                    token,
-                    user
-                } = action.payload
-
-                localStorage.setItem('token', `Bearer ${token}`)
-                localStorage.setItem('user', JSON.stringify(user))
-
-                newState = {
-                    ...state,
-                    token,
-                    user,
-                    isLoading: false,
-                    error: null
-                }
+        case RESET_SUCCESS:
+            newState = {
+                ...state,
+                isLoading: false,
+                error: null
             }
             break
-        case LOGIN_FAILURE:
+        case RESET_FAILURE:
             {
                 const {
                     message,
@@ -48,6 +37,7 @@ export default (state = initialState, action) => {
 
                 newState = {
                     ...state,
+                    message: '',
                     isLoading: false,
                     error: {
                         message,

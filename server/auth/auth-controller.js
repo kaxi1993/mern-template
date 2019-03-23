@@ -123,7 +123,7 @@ const reset = async (req, res) => {
         if (exp <= Date.now()) {
             return res.json({
                 message: 'Password reset token expired',
-                fail: true
+                status: 'fail'
             })
         }
 
@@ -131,7 +131,7 @@ const reset = async (req, res) => {
     } catch (e) {
         return res.json({
             message: 'Password reset token invalid',
-            fail: true
+            status: 'fail'
         })
     }
 
