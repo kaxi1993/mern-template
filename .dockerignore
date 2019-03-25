@@ -1,9 +1,16 @@
 .git
 .env
 .production
+.dockerignore
 .editorconfig
 .eslintrc
 .eslintignore
 .gitignore
+.vscode
+coverage
+docs
 node_modules
+__tests__
+README.md
+LICENSE
 npm-debug.log

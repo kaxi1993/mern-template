@@ -1,5 +1,8 @@
+process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+
 const express = require('express')
 const path = require('path')
+const dotenv = require('dotenv')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const passport = require('passport')
@@ -7,6 +10,13 @@ const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const logger = require('morgan')
+
+// load environment variables
+if (process.env.NODE_ENV !== 'production') {
+    dotenv.config({
+        path: path.resolve(`${__dirname}/../config/.development`)
+    })
+}
 
 const {
     jwtLogin,

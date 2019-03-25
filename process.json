@@ -7,35 +7,47 @@
             },
             "watch": true,
             "ignore_watch": [
-                ".editorconfig",
-                ".eslintrc",
-                ".eslintrignore",
+                ".git",
                 ".vscode",
+                ".babelrc",
+                ".dockerignore",
+                ".editorconfig",
+                ".eslintignore",
+                ".eslintrc",
                 ".gitignore",
-                "node_modules",
+                "README.md",
+                "LICENSE",
+                "npm-debug.log",
                 "coverage",
                 "docs",
-                "tests"
+                "node_modules",
+                "__tests__"
             ],
             "source_map_support": true
         },
         {
-            "name": "testing",
+            "name": "staging",
             "script": ".",
             "env": {
-                "NODE_ENV": "testing"
+                "NODE_ENV": "staging"
             },
             "watch": true,
             "ignore_watch": [
-                ".editorconfig",
-                ".eslintrc",
-                ".eslintrignore",
+                ".git",
                 ".vscode",
+                ".babelrc",
+                ".dockerignore",
+                ".editorconfig",
+                ".eslintignore",
+                ".eslintrc",
                 ".gitignore",
-                "node_modules",
+                "README.md",
+                "LICENSE",
+                "npm-debug.log",
                 "coverage",
                 "docs",
-                "tests"
+                "node_modules",
+                "__tests__"
             ],
             "source_map_support": true
         }

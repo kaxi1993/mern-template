@@ -6,9 +6,9 @@ module.exports = {
     /** The full path to the project's root directory */
     basePath: __dirname,
     /** The name of the directory containing the application source code */
-    srcDir: 'src',
+    srcDir: 'client',
     /** The file name of the application's entry point */
-    main: 'main.jsx',
+    main: 'index.jsx',
     /** The name of the directory in which to emit compiled assets */
     outDir: 'dist',
     /** The base path for all projects assets (relative to the website root) */
@@ -23,22 +23,16 @@ module.exports = {
     verbose: false,
     /** The list of modules to bundle separately from the core application code */
     vendors: [
+        '@material-ui/core',
+        'axios',
+        'object-assign',
+        'query-string',
         'react',
-        'redux',
         'react-dom',
         'react-redux',
-        'redux-saga',
-        'react-router',
         'react-router-dom',
-        'react-flexbox-grid',
-        'react-redux-toastr',
-        'react-tap-event-plugin',
-        'redbox-react',
-        'axios',
-        'classnames',
-        'prop-types',
-        'object-assign',
-        'material-ui',
-        'material-ui-icons'
+        'redux',
+        'redux-devtools',
+        'redux-saga'
     ]
 }
