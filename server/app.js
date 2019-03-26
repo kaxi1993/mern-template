@@ -14,7 +14,7 @@ const logger = require('morgan')
 // load environment variables
 if (process.env.NODE_ENV !== 'production') {
     dotenv.config({
-        path: path.resolve(`${__dirname}/../config/.development`)
+        path: path.resolve(`${__dirname}/../config/.${process.env.NODE_ENV}`)
     })
 }
 
