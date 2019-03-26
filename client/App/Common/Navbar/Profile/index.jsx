@@ -5,7 +5,7 @@ import { Avatar, Button } from '@material-ui/core'
 
 import Menu from './Menu'
 
-import { TOGGLE_PROFILE_MENU } from '../constants'
+import TOGGLE_PROFILE_MENU from '../constants'
 
 import './Profile.scss'
 

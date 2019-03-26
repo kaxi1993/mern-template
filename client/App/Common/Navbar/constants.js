@@ -1,1 +1,1 @@
-export const TOGGLE_PROFILE_MENU = 'TOGGLE_PROFILE_MENU'
+export default 'TOGGLE_PROFILE_MENU'

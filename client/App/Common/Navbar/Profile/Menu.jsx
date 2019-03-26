@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
 
 import { LOG_OUT } from '../../../Auth/constants'
-import { TOGGLE_PROFILE_MENU } from '../constants'
+import TOGGLE_PROFILE_MENU from '../constants'
 
 import './Menu.scss'
 
