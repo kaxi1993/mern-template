@@ -18,7 +18,6 @@ const tokenize = (sub) => {
     }, process.env.JWT_SECRET)
 }
 
-
 const requireAuth = passport.authenticate('jwt', {
     session: false
 })
@@ -41,6 +40,10 @@ const requireLogin = (req, res, next) => {
         next()
     })(req, res, next)
 }
+
+const checkStatus = (req, res) => res.json({
+    isAuthenticated: req.isAuthenticated()
+})
 
 const logIn = async (req, res) => {
     const {
@@ -65,13 +68,9 @@ const logIn = async (req, res) => {
     } catch (e) {
         signale.fatal('Error occured in login', e)
 
-        res.status(500).send('Internal server error', e)
+        res.status(500).send('Internal server error')
     }
 }
-
-const checkStatus = (req, res) => res.json({
-    isAuthenticated: req.isAuthenticated()
-})
 
 const forgot = async (req, res) => {
     const {
@@ -102,7 +101,7 @@ const forgot = async (req, res) => {
     } catch (e) {
         signale.fatal('Error occured in forgot', e)
 
-        res.status(500).send('Internal server error', e)
+        res.status(500).send('Internal server error')
     }
 }
 
@@ -157,15 +156,16 @@ const reset = async (req, res) => {
     } catch (e) {
         signale.fatal('Error occured in reset', e)
 
-        res.status(500).send('Internal server error', e)
+        res.status(500).send('Internal server error')
     }
 }
 
 module.exports = {
-    logIn,
-    forgot,
-    reset,
+    tokenize,
     requireAuth,
     requireLogin,
-    checkStatus
+    checkStatus,
+    logIn,
+    forgot,
+    reset
 }

@@ -15,14 +15,14 @@ const account = {
     pass: 'pass'
 }
 const createTransportMock = {
-    sendMail: async () => account
+    sendMail: jest.fn().mockResolvedValue(account)
 }
 
 describe('Auth Service Tests', () => {
     describe('sendEmail tests', () => {
         test('it should send email successfully', async () => {
-            nodemailer.createTestAccount = jest.fn(() => account)
-            nodemailer.createTransport = jest.fn(() => createTransportMock)
+            nodemailer.createTestAccount = jest.fn().mockResolvedValue(account)
+            nodemailer.createTransport = jest.fn().mockReturnValue(createTransportMock)
 
             const response = await sendEmail(to, token)
 
@@ -30,9 +30,7 @@ describe('Auth Service Tests', () => {
         })
 
         test('it should throw error', async () => {
-            nodemailer.createTestAccount = jest.fn(() => {
-                throw new Error()
-            })
+            nodemailer.createTestAccount = jest.fn().mockRejectedValue(new Error())
 
             await expect(sendEmail(to, token)).rejects.toThrow()
         })
