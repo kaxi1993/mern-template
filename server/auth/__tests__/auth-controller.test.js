@@ -1,3 +1,5 @@
+process.env.JWT_SECRET = 'TEST_SECRET'
+
 const passport = require('passport')
 
 const {
@@ -5,12 +7,10 @@ const {
     requireLogin
 } = require('../auth-controller')
 
-
 describe('Auth Controller Tests', () => {
     describe('tokenize tests', () => {
         test('it should return token successfully', async () => {
             const userId = 1
-            process.env.JWT_SECRET = 'TEST_SECRET'
 
             const token = tokenize(userId)
 

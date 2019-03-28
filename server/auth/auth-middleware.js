@@ -11,7 +11,7 @@ const jwtOptions = {
     secretOrKey: process.env.JWT_SECRET
 }
 
-const jwtLogin = new Strategy(jwtOptions, async (payload, done) => {
+const jwtStrategyCallback = async (payload, done) => {
     try {
         const user = await User.findById(payload.sub)
 
@@ -29,11 +29,9 @@ const jwtLogin = new Strategy(jwtOptions, async (payload, done) => {
     } catch (e) {
         done(e, false)
     }
-})
+}
 
-const localLogin = new LocalStrategy({
-    usernameField: 'email'
-}, async (email, password, done) => {
+const localStrategyCallback = async (email, password, done) => {
     const message = 'Incorrect email or password'
 
     try {
@@ -63,9 +61,16 @@ const localLogin = new LocalStrategy({
     } catch (e) {
         done(e, false)
     }
-})
+}
+
+const jwtLogin = new Strategy(jwtOptions, jwtStrategyCallback)
+const localLogin = new LocalStrategy({
+    usernameField: 'email'
+}, localStrategyCallback)
 
 module.exports = {
     jwtLogin,
-    localLogin
+    jwtStrategyCallback,
+    localLogin,
+    localStrategyCallback
 }

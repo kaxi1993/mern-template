@@ -81,11 +81,6 @@ describe('Auth API Tests', () => {
                 password
             })
 
-            const {
-                field,
-                status
-            } = response.body
-
             expect(response.statusCode).toBe(200)
             expect(response.body.status).toBe('fail')
             expect(response.body.field).toBe('email')
@@ -98,14 +93,9 @@ describe('Auth API Tests', () => {
                 email
             })
 
-            const {
-                field,
-                status
-            } = response.body
-
             expect(response.statusCode).toBe(200)
             expect(response.body.status).toBe('fail')
-            expect(field).toBe('password')
+            expect(response.body.field).toBe('password')
         })
     })
 
@@ -136,11 +126,6 @@ describe('Auth API Tests', () => {
 
             const response = await request(app).post('/api/forgot').set('Accept', 'application/json').send({})
 
-            const {
-                field,
-                status
-            } = response.body
-
             expect(response.statusCode).toBe(200)
             expect(response.body.status).toBe('fail')
             expect(response.body.field).toBe('email')
@@ -152,11 +137,6 @@ describe('Auth API Tests', () => {
             const response = await request(app).post('/api/forgot').set('Accept', 'application/json').send({
                 email
             })
-
-            const {
-                field,
-                status
-            } = response.body
 
             expect(response.statusCode).toBe(200)
             expect(response.body.status).toBe('fail')
