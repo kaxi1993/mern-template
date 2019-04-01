@@ -30,13 +30,17 @@ const taskSchema = new Schema({
     }
 })
 
-taskSchema.pre('update', function update () {
+function preUpdate () {
     this.update({}, {
         $set: {
             updatedAt: new Date()
         }
     })
-})
+}
+
+taskSchema.methods.preUpdate = preUpdate
+
+taskSchema.pre('update', preUpdate)
 
 const Task = mongoose.model('Task', taskSchema)
 
