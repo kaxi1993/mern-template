@@ -33,7 +33,7 @@ const userSchema = new Schema({
     }
 })
 
-userSchema.methods.comparePassword = function comparePassword (candidatePassword, callback) {
+function comparePassword (candidatePassword, callback) {
     bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
         if (err) {
             return callback(err)
@@ -43,7 +43,7 @@ userSchema.methods.comparePassword = function comparePassword (candidatePassword
     })
 }
 
-userSchema.pre('save', function save (next) {
+function preSave (next) {
     const user = this
 
     bcrypt.genSalt(10, (err, salt) => {
@@ -56,15 +56,22 @@ userSchema.pre('save', function save (next) {
 
         next()
     })
-})
+}
 
-userSchema.pre('update', function update () {
+function preUpdate () {
     this.update({}, {
         $set: {
             updatedAt: new Date()
         }
     })
-})
+}
+
+userSchema.methods.comparePassword = comparePassword
+userSchema.methods.preSave = preSave
+userSchema.methods.preUpdate = preUpdate
+
+userSchema.pre('save', preSave)
+userSchema.pre('update', preUpdate)
 
 const User = mongoose.model('User', userSchema)
 
