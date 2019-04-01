@@ -13,7 +13,7 @@ const email = 'test@gmail.com'
 const password = 'password'
 
 describe('Users API Tests', () => {
-    describe('POST /api/users', () => {
+    describe('POST /api/users tests', () => {
         test('it should create user successfully', async () => {
             const _id = 1
 
@@ -34,7 +34,7 @@ describe('Users API Tests', () => {
             expect(response.body._id).toBe(_id)
         })
 
-        test('it should throw error', async () => {
+        test('it should return error', async () => {
             User.findOne = jest.fn().mockRejectedValue(new Error())
 
             const response = await request(app).post('/api/users').set('Accept', 'application/json').send({
