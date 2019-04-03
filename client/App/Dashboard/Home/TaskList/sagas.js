@@ -4,6 +4,7 @@ import {
     takeLatest
 } from 'redux-saga/effects'
 
+import { API_ERROR } from '../../../Auth/constants'
 import {
     GET_TASKS_REQUEST,
     GET_TASKS_SUCCESS,
@@ -24,6 +25,8 @@ function* getTasks (action) {
             payload
         })
     } catch (e) {
+        yield put({ type: API_ERROR, payload: e })
+
         yield put({
             type: GET_TASKS_FAILURE,
             payload: e
