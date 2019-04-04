@@ -50,7 +50,7 @@ module.exports = {
         }]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Mern',
             template: path.resolve(__dirname, 'client', 'index.html'),
