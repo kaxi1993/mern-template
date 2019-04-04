@@ -11,6 +11,8 @@ import {
 } from './TaskList/constants'
 
 import {
+    START_TASK_EDITING,
+    CANCEL_TASK_EDITING,
     UPDATE_TASK_REQUEST,
     UPDATE_TASK_SUCCESS,
     UPDATE_TASK_FAILURE,
@@ -21,6 +23,7 @@ import {
 
 const initialState = {
     tasks: [],
+    activeTask: null,
     isLoading: false,
     error: null
 }
@@ -33,6 +36,18 @@ export default (state = initialState, action) => {
     } = action
 
     switch (type) {
+        case START_TASK_EDITING:
+            newState = {
+                ...state,
+                activeTask: action.payload._id
+            }
+            break
+        case CANCEL_TASK_EDITING:
+            newState = {
+                ...state,
+                activeTask: null
+            }
+            break
         case GET_TASKS_REQUEST:
         case ADD_TASK_REQUEST:
         case UPDATE_TASK_REQUEST:
@@ -65,7 +80,7 @@ export default (state = initialState, action) => {
 
                 newState = {
                     ...state,
-                    tasks: [task, ...state.tasks],
+                    tasks: [...state.tasks, task],
                     isLoading: false,
                     error: null
                 }

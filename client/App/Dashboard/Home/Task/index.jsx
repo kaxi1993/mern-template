@@ -5,7 +5,9 @@ import { TextField, Button } from '@material-ui/core'
 
 import {
     UPDATE_TASK_REQUEST,
-    DELETE_TASK_REQUEST
+    DELETE_TASK_REQUEST,
+    START_TASK_EDITING,
+    CANCEL_TASK_EDITING
 } from './constants'
 
 import './Task.scss'
@@ -15,7 +17,6 @@ class Task extends Component {
         super(props)
 
         this.state = {
-            isEditing: false,
             task: {}
         }
 
@@ -70,16 +71,17 @@ class Task extends Component {
     }
 
     startEditing () {
-        this.setState(state => ({
-            isEditing: !state.isEditing
-        }))
+        const { _id } = this.props.task
+
+        this.props.dispatch({ type: START_TASK_EDITING, payload: { _id } })
     }
 
     cancelEditing () {
         this.setState({
-            task: { ...this.props.task },
-            isEditing: false
+            task: { ...this.props.task }
         })
+
+        this.props.dispatch({ type: CANCEL_TASK_EDITING })
     }
 
     handleTitleChange (e) {
@@ -94,11 +96,11 @@ class Task extends Component {
     }
 
     render () {
-        const { error } = this.props
-        const { isEditing, task } = this.state
-        const { title, status } = task
+        const { activeTask, error } = this.props
+        const { task } = this.state
+        const { _id, title, status } = task
 
-        if (!isEditing) {
+        if (activeTask !== _id) {
             return (
                 <div className='mt-task-container'>
                     <div className='mt-task'>
@@ -163,9 +165,10 @@ class Task extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { error } = state.home
+    const { activeTask, error } = state.home
 
     return {
+        activeTask,
         error
     }
 }
