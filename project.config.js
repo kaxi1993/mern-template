@@ -25,7 +25,6 @@ module.exports = {
     vendors: [
         '@material-ui/core',
         'axios',
-        'object-assign',
         'query-string',
         'react',
         'react-dom',

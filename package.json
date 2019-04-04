@@ -29,7 +29,6 @@
         "axios": "^0.18.0",
         "bcrypt-nodejs": "0.0.3",
         "body-parser": "^1.18.3",
-        "clean-webpack-plugin": "^2.0.1",
         "cookie-parser": "^1.4.4",
         "dotenv": "^5.0.1",
         "express": "^4.16.4",
@@ -50,11 +49,7 @@
         "redux": "^4.0.1",
         "redux-devtools": "^3.5.0",
         "redux-saga": "^1.0.2",
-        "signale": "^1.4.0",
-        "webpack": "^4.29.6",
-        "webpack-dev-middleware": "^3.6.2",
-        "webpack-hot-middleware": "^2.24.3",
-        "webpack-merge": "^4.2.1"
+        "signale": "^1.4.0"
     },
     "devDependencies": {
         "@babel/core": "^7.4.3",
@@ -64,6 +59,7 @@
         "@babel/runtime": "^7.4.3",
         "babel-eslint": "^8.2.5",
         "babel-loader": "^8.0.5",
+        "clean-webpack-plugin": "^2.0.1",
         "css-loader": "^2.1.1",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.11.2",
@@ -78,6 +74,10 @@
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
         "supertest": "^4.0.2",
-        "webpack-cli": "^3.3.0"
+        "webpack": "^4.29.6",
+        "webpack-cli": "^3.3.0",
+        "webpack-dev-middleware": "^3.6.2",
+        "webpack-hot-middleware": "^2.24.3",
+        "webpack-merge": "^4.2.1"
     }
 }

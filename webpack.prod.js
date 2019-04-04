@@ -7,5 +7,10 @@ module.exports = merge(common, {
     devtool: 'source-map',
     output: {
         filename: '[name].[contenthash].js'
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
     }
 })
