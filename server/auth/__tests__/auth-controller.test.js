@@ -20,7 +20,7 @@ describe('Auth Controller Tests', () => {
 
     describe('requireLogin tests', () => {
         test('it should move to next middleware successfully', () => {
-            passport.authenticate = jest.fn((type, session, callback) => (req, res, next) => callback(null, {}, {}))
+            passport.authenticate = jest.fn((type, session, callback) => () => callback(null, {}, {}))
 
             const nextMock = jest.fn()
 
@@ -31,7 +31,7 @@ describe('Auth Controller Tests', () => {
         })
 
         test('it should move to next middleware with error', () => {
-            passport.authenticate = jest.fn((type, session, callback) => (req, res, next) => callback(new Error()))
+            passport.authenticate = jest.fn((type, session, callback) => () => callback(new Error()))
 
             const nextMock = jest.fn()
 
@@ -44,7 +44,7 @@ describe('Auth Controller Tests', () => {
         test('it should return login error', () => {
             const message = 'Incorrect username or password'
 
-            passport.authenticate = jest.fn((type, session, callback) => (req, res, next) => callback(null, null, {
+            passport.authenticate = jest.fn((type, session, callback) => () => callback(null, null, {
                 message
             }))
 

@@ -16,7 +16,7 @@ describe('User Model Tests', () => {
 
             const comparePasswordMock = jest.fn()
 
-            bcrypt.compare = jest.fn((newPassword, oldPassword, callback) => callback(null, newPassword === oldPassword))
+            bcrypt.compare = jest.fn((newPass, oldPass, callback) => callback(null, newPass === oldPass))
 
             user.comparePassword(candidatePasword, comparePasswordMock)
 

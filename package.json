@@ -6,6 +6,8 @@
     "scripts": {
         "start": "nodemon",
         "build": "webpack --config webpack.prod.js",
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix .",
         "test": "jest",
         "test:watch": "npm test -- --watch",
         "test:coverage": "jest --coverage"
@@ -27,9 +29,11 @@
         "axios": "^0.18.0",
         "bcrypt-nodejs": "0.0.3",
         "body-parser": "^1.18.3",
+        "clean-webpack-plugin": "^2.0.1",
         "cookie-parser": "^1.4.4",
         "dotenv": "^5.0.1",
         "express": "^4.16.4",
+        "html-webpack-plugin": "^3.2.0",
         "joi": "^14.3.1",
         "jwt-simple": "^0.5.5",
         "mongoose": "^5.4.19",
@@ -46,7 +50,11 @@
         "redux": "^4.0.1",
         "redux-devtools": "^3.5.0",
         "redux-saga": "^1.0.2",
-        "signale": "^1.4.0"
+        "signale": "^1.4.0",
+        "webpack": "^4.29.6",
+        "webpack-dev-middleware": "^3.6.2",
+        "webpack-hot-middleware": "^2.24.3",
+        "webpack-merge": "^4.2.1"
     },
     "devDependencies": {
         "@babel/core": "^7.4.0",
@@ -56,7 +64,6 @@
         "@babel/runtime": "^7.4.2",
         "babel-eslint": "^8.2.5",
         "babel-loader": "^8.0.5",
-        "clean-webpack-plugin": "^1.0.1",
         "css-loader": "^2.1.1",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.11.2",
@@ -65,17 +72,12 @@
         "eslint-plugin-import": "^2.16.0",
         "eslint-plugin-jsx-a11y": "^6.2.1",
         "eslint-plugin-react": "^7.12.4",
-        "html-webpack-plugin": "^3.2.0",
         "jest": "^24.5.0",
         "node-sass": "^4.11.0",
         "nodemon": "^1.18.10",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
         "supertest": "^4.0.2",
-        "webpack": "^4.29.6",
-        "webpack-cli": "^3.3.0",
-        "webpack-dev-middleware": "^3.6.1",
-        "webpack-hot-middleware": "^2.24.3",
-        "webpack-merge": "^4.2.1"
+        "webpack-cli": "^3.3.0"
     }
 }
