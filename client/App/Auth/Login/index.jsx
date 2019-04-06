@@ -66,12 +66,12 @@ class Login extends Component {
         return (
             <div className='mt-login mt-auth'>
                 <div className='mt-auth__form-container'>
-                    {!error && search && (
+                    {search && (
                         <div className='mt-info mt-info--success'>
                             {search}
                         </div>
                     )}
-                    {error && (
+                    {error && !search && (
                         <div className='mt-info mt-info--error'>
                             {error.message}
                         </div>

@@ -38,5 +38,7 @@ $linkColor: #333;
 }
 
 .mt-menu__item-icon {
+    position: relative;
+    top: -1px;
     margin-right: 10px;
 }
