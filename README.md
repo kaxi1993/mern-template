@@ -3,13 +3,13 @@
 [![npm version](https://badge.fury.io/js/mern-template.svg)](https://badge.fury.io/js/mern-template)
 [![npm](https://img.shields.io/npm/dt/mern-template.svg?maxAge=2592000)](https://www.npmjs.com/package/mern-template)
 
-**mern-temlate** is a cli tool for generating isomorphic and modular mongo, express, react and node web app. The project is based on the best practices and popular tools. This is not just a simple starter which generates folder structure only, but a real example of production ready todolist web application.
+**mern-temlate** is a cli tool for generating isomorphic and modular mongo, express, react and node web app. The project is based on the best practices and popular tools. This is not just a simple starter that generates only the folder structure, but a real example of a production ready todo list web application.
 
 ## Table of contents
 * [Visualization](#visualization)
 * [Installation](#installation)
 * [Run project](#run-project)
-* [File structure](#file-structure)
+* [Project structure](#project-structure)
 
 
 ## Visualization
@@ -42,7 +42,7 @@ cd my-app
 docker-compose up
 ```
 
-## File Structure
+## Project Structure
 ```
 |__ bin
 |__ client
@@ -62,9 +62,21 @@ docker-compose up
 ```
 
 ### bin
-folder contains file named `www` from where we start express server and connect to mongodb
+bin folder contains file named `www` from where we start express server and connect to mongodb.
 
 ### config
+I use [dotenv](https://github.com/motdotla/dotenv) to load environment variables. If NODE_ENV is development or test, environment variables are loaded from `config/.development` and `config/.test` files relatively. In production it is better to enter all your environment variables from console. It isn't good idea to upload environment variables on github.
+
+### client
+client folder contains `react` code. I use [redux](https://redux.js.org/) and [redux-saga](https://github.com/redux-saga/redux-saga) for state management,
+[react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start) to handle client side routing and [material-ui](https://material-ui.com/) as a UI framework. I use `scss` preprocessor with [bem](http://getbem.com/introduction/) methodology.
+
+### public
+public folder contains static assets.
+
+### server
+
+
 
 ## License
 Copyright (c) 2019 Lasha Kakhidze. This code is released under the [MIT](https://github.com/kaxi1993/mern-template/blob/master/LICENSE) license.
