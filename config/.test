@@ -1,0 +1,5 @@
+PORT=5000
+JWT_SECRET=MYJWTSECRET
+AUTH_EXPIRES_IN=3600000
+EMAIL=mern-template@gmail.com
+HOST=http://localhost:5000
