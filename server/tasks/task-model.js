@@ -19,28 +19,8 @@ const taskSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now
     }
-})
-
-function preUpdate () {
-    this.update({}, {
-        $set: {
-            updatedAt: new Date()
-        }
-    })
-}
-
-taskSchema.methods.preUpdate = preUpdate
-
-taskSchema.pre('update', preUpdate)
+}, { timestamps: true })
 
 const Task = mongoose.model('Task', taskSchema)
 

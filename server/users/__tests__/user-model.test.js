@@ -71,18 +71,4 @@ describe('User Model Tests', () => {
             expect(nextMock.mock.calls[0][0]).toBeInstanceOf(Error)
         })
     })
-
-    describe('preUpdate Tests', () => {
-        test('it should execute preUpdate hook successfully', () => {
-            const user = new User()
-
-            const updateMock = jest.fn()
-
-            user.update = updateMock
-
-            user.preUpdate()
-
-            expect(updateMock.mock.calls.length).toBe(1)
-        })
-    })
 })
