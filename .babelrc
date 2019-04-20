@@ -1,6 +1,7 @@
 {
     "presets": [
-        "@babel/react"
+        "@babel/react",
+        "@babel/preset-env",
     ],
     "plugins": [
         "@babel/plugin-transform-runtime"
