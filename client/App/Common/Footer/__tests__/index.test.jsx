@@ -1,21 +1,19 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import { shallow, configure } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
+import { MemoryRouter } from 'react-router-dom'
 import renderer from 'react-test-renderer'
 
 import Footer from '../index'
 
-configure({ adapter: new Adapter() })
+describe('<Footer/> Snapshot Tests', () => {
+    it('should render footer correctly', () => {
+        const tree = renderer
+            .create(
+                <MemoryRouter>
+                    <Footer />
+                </MemoryRouter>
+            )
+            .toJSON()
 
-it('renders correctly', () => {
-    const tree = renderer
-        .create(
-            <BrowserRouter>
-                <Footer />
-            </BrowserRouter>
-        )
-        .toJSON()
-
-    expect(tree).toMatchSnapshot()
+        expect(tree).toMatchSnapshot()
+    })
 })
