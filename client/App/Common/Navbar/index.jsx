@@ -8,7 +8,7 @@ import './Navbar.scss'
 
 function Navbar ({ isAuthenticated }) {
     return (
-        < nav className='mt-header' >
+        <nav className='mt-header' >
             <div className='mt-header__position'>
                 <div className='mt-container'>
                     <div className='mt-header__inner'>
@@ -36,7 +36,7 @@ function Navbar ({ isAuthenticated }) {
                     </div>
                 </div>
             </div>
-        </nav >
+        </nav>
     )
 }
 
