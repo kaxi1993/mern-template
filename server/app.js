@@ -26,6 +26,8 @@ const devConfig = require('../webpack.dev.js')
 
 const app = express()
 
+app.disable('x-powered-by')
+
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
