@@ -13,7 +13,7 @@
 
 
 ## Visualization
-![alt text](http://kaxi1993.github.io/images/npm/mern-template/todo.gif)
+![alt text](http://kaxi1993.github.io/images/projects/mern-template/todo.gif)
 
 ## Installation
 ```bash
