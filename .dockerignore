@@ -5,6 +5,7 @@
 .editorconfig
 .eslintrc
 .eslintignore
+.github
 .gitignore
 .vscode
 coverage
