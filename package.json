@@ -1,7 +1,7 @@
 {
     "name": "mern-template",
     "version": "0.1.1",
-    "description": "MongoDB Express React Node App Starter Template",
+    "description": "MERN boilerplate generator",
     "main": "bin/www",
     "scripts": {
         "start": "nodemon",
