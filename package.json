@@ -1,7 +1,7 @@
 {
     "name": "mern-template",
     "version": "1.0.6",
-    "description": "MERN boilerplate generator. Mongo, Express, React, Node todo list web app with 100% test coverage.",
+    "description": "MERN boilerplate generator. Mongo, Express, React, Node todo list web app.",
     "main": "bin/www",
     "scripts": {
         "start": "nodemon",
