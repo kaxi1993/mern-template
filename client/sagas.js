@@ -10,6 +10,7 @@ import resetSaga from './App/Auth/Reset/sagas'
 import getTasksSaga from './App/Dashboard/Home/TaskList/sagas'
 import addTaskSaga from './App/Dashboard/Home/NewTask/sagas'
 import { updateTaskSaga, deleteTaskSaga } from './App/Dashboard/Home/Task/sagas'
+import weatherSaga from './App/Weather/sagas'
 
 function* sagas () {
     yield spawn(authSaga)
@@ -21,6 +22,7 @@ function* sagas () {
     yield spawn(addTaskSaga)
     yield spawn(updateTaskSaga)
     yield spawn(deleteTaskSaga)
+    yield spawn(weatherSaga)
 }
 
 export default sagas

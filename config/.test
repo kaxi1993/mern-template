@@ -3,3 +3,5 @@ JWT_SECRET=MYJWTSECRET
 AUTH_EXPIRES_IN=3600000
 EMAIL=mern-template@gmail.com
 HOST=http://localhost:5000
+WEATHER_API_URL=https://samples.openweathermap.org
+WEATHER_API_KEY=8d11d40104dbafe4b4d644bca1e05a06

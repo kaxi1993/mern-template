@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter, Route, Redirect } from 'react-router-dom'
 
-import Login from './Login'
+// import Login from './Login'
+import Weather from '../Weather'
 import Signup from './Signup'
 import Forgot from './Forgot'
 import Reset from './Reset'
@@ -15,7 +16,7 @@ function Auth ({ isAuthenticated }) {
             <Route path='/(login|signup|forgot|reset)' render={() => (
                 isAuthenticated && <Redirect to='/app' />
             )} />
-            <Route path='/login' component={Login} />
+            <Route path='/login' component={Weather} />
             <Route path='/signup' component={Signup} />
             <Route path='/forgot' component={Forgot} />
             <Route path='/reset' component={Reset} />

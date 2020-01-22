@@ -3,6 +3,7 @@ import {
 } from 'redux'
 
 import authReducers from './App/Auth/reducers'
+import weatherReducers from './App/Weather/reducers'
 import loginReducers from './App/Auth/Login/reducers'
 import signupReducers from './App/Auth/Signup/reducers'
 import forgotReducers from './App/Auth/Forgot/reducers'
@@ -12,6 +13,7 @@ import homeReducers from './App/Dashboard/Home/reducers'
 
 export default combineReducers({
     auth: authReducers,
+    weather: weatherReducers,
     login: loginReducers,
     signup: signupReducers,
     forgot: forgotReducers,
