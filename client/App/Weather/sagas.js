@@ -15,8 +15,6 @@ import Api from './api'
 
 function* searchWeather (action) {
     try {
-        // yield delay(1000)
-
         const response = yield call(Api.searchWeather, action.payload)
         const payload = response ? response.data : {}
 
