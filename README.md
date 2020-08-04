@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/mern-template.svg)](https://badge.fury.io/js/mern-template)
 [![npm](https://img.shields.io/npm/dt/mern-template.svg?maxAge=2592000)](https://www.npmjs.com/package/mern-template)
 
-**mern-temlate** is a cli tool for generating isomorphic and modular mongo, express, react and node web app. The project is based on the best practices and popular tools. This is not just a simple starter that generates only the folder structure, but a real example of a production ready todo list web application.
+**mern-temlate** is a cli tool for generating isomorphic and modular mongo, express, react and node web app. The project is based on the best practices and popular tools. This is not just a simple starter that generates only the folder structure, but a real example of a production ready web application.
 
 ## Table of contents
 * [Visualization](#visualization)
