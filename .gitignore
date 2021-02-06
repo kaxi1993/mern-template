@@ -64,3 +64,6 @@ dist/
 
 # macOS output file
 .DS_Store
+
+# ideas directory
+.idea/

@@ -27,7 +27,7 @@ const createUser = async (req, res) => {
             status: 'ok'
         })
     } catch (e) {
-        signale.fatal('Error occured in createUser', e)
+        signale.fatal('Error occurred in createUser', e)
 
         res.status(500).send('Internal server error')
     }

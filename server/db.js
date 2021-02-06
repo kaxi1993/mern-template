@@ -19,4 +19,4 @@ const db = {
     }
 }
 
-module.exports = db
+export default db
