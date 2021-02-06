@@ -1,57 +1,58 @@
 {
-    "apps": [{
-            "name": "production",
-            "script": ".",
-            "env": {
-                "NODE_ENV": "production"
-            },
-            "log_date_format": "YYYY-MM-DD HH:mm:ss.SSS Z",
-            "watch": true,
-            "ignore_watch": [
-                ".git",
-                ".vscode",
-                ".babelrc",
-                ".dockerignore",
-                ".editorconfig",
-                ".eslintignore",
-                ".eslintrc",
-                ".gitignore",
-                "README.md",
-                "LICENSE",
-                "npm-debug.log",
-                "coverage",
-                "docs",
-                "node_modules",
-                "__tests__"
-            ],
-            "source_map_support": true
-        },
-        {
-            "name": "staging",
-            "script": ".",
-            "env": {
-                "NODE_ENV": "staging"
-            },
-            "log_date_format": "YYYY-MM-DD HH:mm:ss.SSS Z",
-            "watch": true,
-            "ignore_watch": [
-                ".git",
-                ".vscode",
-                ".babelrc",
-                ".dockerignore",
-                ".editorconfig",
-                ".eslintignore",
-                ".eslintrc",
-                ".gitignore",
-                "README.md",
-                "LICENSE",
-                "npm-debug.log",
-                "coverage",
-                "docs",
-                "node_modules",
-                "__tests__"
-            ],
-            "source_map_support": true
-        }
-    ]
+  "apps": [
+    {
+      "name": "production",
+      "script": ".",
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "log_date_format": "YYYY-MM-DD HH:mm:ss.SSS Z",
+      "watch": true,
+      "ignore_watch": [
+        ".git",
+        ".vscode",
+        ".babelrc",
+        ".dockerignore",
+        ".editorconfig",
+        ".eslintignore",
+        ".eslintrc",
+        ".gitignore",
+        "README.md",
+        "LICENSE",
+        "npm-debug.log",
+        "coverage",
+        "docs",
+        "node_modules",
+        "__tests__"
+      ],
+      "source_map_support": true
+    },
+    {
+      "name": "staging",
+      "script": ".",
+      "env": {
+        "NODE_ENV": "staging"
+      },
+      "log_date_format": "YYYY-MM-DD HH:mm:ss.SSS Z",
+      "watch": true,
+      "ignore_watch": [
+        ".git",
+        ".vscode",
+        ".babelrc",
+        ".dockerignore",
+        ".editorconfig",
+        ".eslintignore",
+        ".eslintrc",
+        ".gitignore",
+        "README.md",
+        "LICENSE",
+        "npm-debug.log",
+        "coverage",
+        "docs",
+        "node_modules",
+        "__tests__"
+      ],
+      "source_map_support": true
+    }
+  ]
 }

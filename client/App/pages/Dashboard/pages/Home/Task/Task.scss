@@ -1,0 +1,53 @@
+$todoColor: #7d7d7d;
+$doneColor: #249024;
+
+.mt-task {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-content: center;
+
+  &:hover {
+    .mt-task__action-delete {
+      visibility: visible;
+    }
+  }
+}
+
+.mt-task__status {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.mt-task__status--todo {
+  fill: $todoColor;
+
+  &:hover {
+    fill: darken($color: $todoColor, $amount: 20%);
+  }
+}
+
+.mt-task__status--done {
+  fill: $doneColor;
+
+  &:hover {
+    fill: darken($color: $doneColor, $amount: 5%);
+  }
+}
+
+.mt-task__title {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.mt-task__action-delete {
+  position: absolute;
+  right: 10px;
+  fill: #545454;
+  cursor: pointer;
+  visibility: hidden;
+  background: none;
+  border: none;
+  outline: none;
+}

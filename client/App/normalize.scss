@@ -27,7 +27,7 @@ hgroup,
 nav,
 section,
 summary {
-    display: block;
+  display: block;
 }
 
 /*
@@ -37,9 +37,9 @@ summary {
 audio,
 canvas,
 video {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
 }
 
 /*
@@ -48,8 +48,8 @@ video {
   */
 
 audio:not([controls]) {
-    display: none;
-    height: 0;
+  display: none;
+  height: 0;
 }
 
 /*
@@ -59,7 +59,7 @@ audio:not([controls]) {
   */
 
 [hidden] {
-    display: none;
+  display: none;
 }
 
 /* ==========================================================================
@@ -74,12 +74,12 @@ audio:not([controls]) {
   */
 
 html {
-    font-size: 100%;
-    /* 1 */
-    -webkit-text-size-adjust: 100%;
-    /* 2 */
-    -ms-text-size-adjust: 100%;
-    /* 2 */
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /*
@@ -87,7 +87,7 @@ html {
   */
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -99,7 +99,7 @@ body {
   */
 
 a:focus {
-    outline: thin dotted;
+  outline: thin dotted;
 }
 
 /*
@@ -108,7 +108,7 @@ a:focus {
 
 a:active,
 a:hover {
-    outline: 0;
+  outline: 0;
 }
 
 /* ==========================================================================
@@ -120,7 +120,7 @@ a:hover {
   */
 
 abbr[title] {
-    border-bottom: 1px dotted;
+  border-bottom: 1px dotted;
 }
 
 /*
@@ -129,7 +129,7 @@ abbr[title] {
 
 b,
 strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /*
@@ -137,7 +137,7 @@ strong {
   */
 
 dfn {
-    font-style: italic;
+  font-style: italic;
 }
 
 /*
@@ -145,9 +145,9 @@ dfn {
   */
 
 pre {
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 /*
@@ -155,7 +155,7 @@ pre {
   */
 
 q {
-    quotes: none;
+  quotes: none;
 }
 
 /*
@@ -164,8 +164,8 @@ q {
 
 q:before,
 q:after {
-    content: '';
-    content: none;
+  content: '';
+  content: none;
 }
 
 /*
@@ -173,7 +173,7 @@ q:after {
   */
 
 small {
-    font-size: 80%;
+  font-size: 80%;
 }
 
 /*
@@ -182,18 +182,18 @@ small {
 
 sub,
 sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
 sup {
-    top: -0.5em;
+  top: -0.5em;
 }
 
 sub {
-    bottom: -0.25em;
+  bottom: -0.25em;
 }
 
 /* ==========================================================================
@@ -206,9 +206,9 @@ dd,
 menu,
 ol,
 ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 /* ==========================================================================
@@ -221,10 +221,10 @@ ul {
   */
 
 img {
-    border: 0;
-    /* 1 */
-    -ms-interpolation-mode: bicubic;
-    /* 2 */
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
 }
 
 /*
@@ -232,7 +232,7 @@ img {
   */
 
 svg:not(:root) {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 /* ==========================================================================
@@ -244,7 +244,7 @@ svg:not(:root) {
   */
 
 figure {
-    margin: 0;
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -256,7 +256,7 @@ figure {
   */
 
 form {
-    margin: 0;
+  margin: 0;
 }
 
 /*
@@ -267,8 +267,8 @@ form {
   * [OOCSS] - removed border bottom styling. Set margin and padding to 0.
   */
 fieldset {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -278,13 +278,13 @@ fieldset {
   */
 
 legend {
-    border: 0;
-    /* 1 */
-    padding: 0;
-    white-space: normal;
-    /* 2 */
-    *margin-left: -7px;
-    /* 3 */
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
 }
 
 /*
@@ -298,14 +298,14 @@ button,
 input,
 select,
 textarea {
-    font-size: 100%;
-    /* 1 */
-    margin: 0;
-    /* 2 */
-    vertical-align: baseline;
-    /* 3 */
-    *vertical-align: middle;
-    /* 3 */
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
 }
 
 /*
@@ -315,7 +315,7 @@ textarea {
 
 button,
 input {
-    line-height: normal;
+  line-height: normal;
 }
 
 /*
@@ -333,12 +333,12 @@ html input[type="button"],
 /* 1 */
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button;
-    /* 2 */
-    cursor: pointer;
-    /* 3 */
-    *overflow: visible;
-    /* 4 */
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
 }
 
 /*
@@ -347,7 +347,7 @@ input[type="submit"] {
 
 button[disabled],
 input[disabled] {
-    cursor: default;
+  cursor: default;
 }
 
 /*
@@ -357,16 +357,16 @@ input[disabled] {
   *    Known issue: excess padding remains in IE 6.
   */
 
-input[type="checkbox"],
-input[type="radio"] {
-    box-sizing: border-box;
-    /* 1 */
-    padding: 0;
-    /* 2 */
-    *height: 13px;
-    /* 3 */
-    *width: 13px;
-    /* 3 */
+input[type='checkbox'],
+input[type='radio'] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
 }
 
 /*
@@ -375,13 +375,13 @@ input[type="radio"] {
   *    (include `-moz` to future-proof).
   */
 
-input[type="search"] {
-    -webkit-appearance: textfield;
-    /* 1 */
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    /* 2 */
-    box-sizing: content-box;
+input[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
 }
 
 /*
@@ -389,9 +389,9 @@ input[type="search"] {
   * on OS X.
   */
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 /*
@@ -400,8 +400,8 @@ input[type="search"]::-webkit-search-decoration {
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+  border: 0;
+  padding: 0;
 }
 
 /*
@@ -410,10 +410,10 @@ input::-moz-focus-inner {
   */
 
 textarea {
-    overflow: auto;
-    /* 1 */
-    vertical-align: top;
-    /* 2 */
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
 }
 
 /* ==========================================================================
@@ -425,10 +425,10 @@ textarea {
   */
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 th {
-    font-weight: normal;
+  font-weight: normal;
 }

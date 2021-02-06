@@ -1,38 +1,36 @@
-const nodemailer = require('nodemailer')
-const signale = require('signale')
+const nodemailer = require('nodemailer');
+const signale = require('signale');
 
 // disable logging during testing
-signale.disable()
+signale.disable();
 
-const {
-    sendEmail
-} = require('../auth-service')
+const { sendEmail } = require('../auth-service');
 
-const to = 'test@gmail.com'
-const token = 'TEST_TOKEN'
+const to = 'test@gmail.com';
+const token = 'TEST_TOKEN';
 const account = {
-    user: 'user@gmail.com',
-    pass: 'pass'
-}
+  user: 'user@gmail.com',
+  pass: 'pass',
+};
 const createTransportMock = {
-    sendMail: jest.fn().mockResolvedValue(account)
-}
+  sendMail: jest.fn().mockResolvedValue(account),
+};
 
 describe('Auth Service Tests', () => {
-    describe('sendEmail tests', () => {
-        test('it should send email successfully', async () => {
-            nodemailer.createTestAccount = jest.fn().mockResolvedValue(account)
-            nodemailer.createTransport = jest.fn().mockReturnValue(createTransportMock)
+  describe('sendEmail tests', () => {
+    test('it should send email successfully', async () => {
+      nodemailer.createTestAccount = jest.fn().mockResolvedValue(account);
+      nodemailer.createTransport = jest.fn().mockReturnValue(createTransportMock);
 
-            const response = await sendEmail(to, token)
+      const response = await sendEmail(to, token);
 
-            expect(response).toEqual(account)
-        })
+      expect(response).toEqual(account);
+    });
 
-        test('it should throw error', async () => {
-            nodemailer.createTestAccount = jest.fn().mockRejectedValue(new Error())
+    test('it should throw error', async () => {
+      nodemailer.createTestAccount = jest.fn().mockRejectedValue(new Error());
 
-            await expect(sendEmail(to, token)).rejects.toThrow()
-        })
-    })
-})
+      await expect(sendEmail(to, token)).rejects.toThrow();
+    });
+  });
+});

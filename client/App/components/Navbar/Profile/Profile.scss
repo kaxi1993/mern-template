@@ -1,0 +1,13 @@
+.mt-header__profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.mt-header__profile-action {
+  height: 100%;
+  z-index: 101;
+}

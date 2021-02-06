@@ -1,18 +1,18 @@
 webapp:
-    build: .
-    dockerfile: Dockerfile-development
-    ports:
-        - "5000:5000"
-    links:
-        - mongodb
-    volumes:
-        - .:/usr/src/app/
-    environment:
-        NODE_ENV: development
-        MONGODB_URI: mongodb://mongodb:27017/mern-template
+  build: .
+  dockerfile: Dockerfile-development
+  ports:
+    - '5000:5000'
+  links:
+    - mongodb
+  volumes:
+    - .:/usr/src/app/
+  environment:
+    NODE_ENV: development
+    MONGODB_URI: mongodb://mongodb:27017/mern-template
 
 mongodb:
-    image: mongo:latest
-    restart: always
-    ports:
-        - "27017:27017"
+  image: mongo:latest
+  restart: always
+  ports:
+    - '27017:27017'

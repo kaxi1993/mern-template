@@ -1,0 +1,58 @@
+$linkColor: #f5004c;
+
+.mt-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 65px);
+}
+
+.mt-auth__form-container {
+  padding-top: 25px;
+  padding-bottom: 140px;
+  width: 400px;
+}
+
+.mt-auth__title {
+  text-align: center;
+  margin: 0px;
+  padding-bottom: 15px;
+}
+
+.mt-auth__description {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.mt-info {
+  padding: 0.75rem 1.25rem;
+  margin: 1rem 0;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.mt-info--success {
+  color: #145a24;
+  background-color: #d3eed9;
+  border-color: #c1e6ca;
+}
+
+.mt-info--error {
+  color: #b52a37;
+  background-color: #ffd4d8;
+  border-color: #fbb6be;
+}
+
+.mt-auth__actions {
+  margin-top: 14px;
+}
+
+.mt-auth__action-link {
+  color: $linkColor;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

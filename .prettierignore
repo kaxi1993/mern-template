@@ -1,0 +1,16 @@
+/.github/**
+/.vscode/**
+/build/**
+/dist/**
+/public/**
+/coverage/**
+/node_modules/**
+/docs/**
+/jsdoc/**
+/templates/**
+/tests/bench/**
+/tests/fixtures/**
+/tests/performance/**
+/tmp/**
+test.js
+!.eslintrc

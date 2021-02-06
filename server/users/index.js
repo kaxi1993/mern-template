@@ -1,17 +1,11 @@
-const {
-    Router
-} = require('express')
+const { Router } = require('express');
 
-const {
-    createUser
-} = require('./user-controller')
+const { createUser } = require('./user-controller');
 
-const {
-    validateCreateUser
-} = require('./user-validation')
+const { validateCreateUser } = require('./user-validation');
 
-const router = Router()
+const router = Router();
 
-router.post('/users', validateCreateUser, createUser)
+router.post('/users', validateCreateUser, createUser);
 
-module.exports = router
+module.exports = router;
