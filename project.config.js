@@ -8,7 +8,7 @@ module.exports = {
   /** The name of the directory containing the application source code */
   srcDir: 'client',
   /** The file name of the application's entry point */
-  main: 'index.jsx',
+  main: 'index.tsx',
   /** The name of the directory in which to emit compiled assets */
   outDir: 'dist',
   /** The base path for all projects assets (relative to the website root) */

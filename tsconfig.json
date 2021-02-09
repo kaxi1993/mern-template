@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
-    "module": "system",
+    "module": "es6",
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "target": "es5",
+    "jsx": "react",
+    "strict": true,
+    "allowJs": true,
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "outFile": "../../built/local/tsc.js",
-    "sourceMap": true
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "include": ["client/**/*"],
+  "exclude": ["node_modules", "dist", "coverage", ".github", "**/*.spec.ts"]
 }

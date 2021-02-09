@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import Terms from './Terms';
 import Privacy from './Privacy';
 
-import './Confidentiality.scss';
+import './Poliicy.scss';
 
 function Confidentiality() {
   return (

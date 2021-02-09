@@ -2,7 +2,7 @@ import { call, put, delay, takeLatest } from 'redux-saga/effects';
 
 import { CHECK_AUTH_STATUS_REQUEST, CHECK_AUTH_STATUS_SUCCESS, CHECK_AUTH_STATUS_FAILURE } from './constants';
 
-import Api from './api';
+import Api from './ap';
 
 function* checkStatus(action) {
   try {
