@@ -32,6 +32,5 @@ module.exports = {
     'react-router-dom',
     'redux',
     'redux-devtools',
-    'redux-saga',
   ],
 };
