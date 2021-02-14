@@ -1,10 +1,10 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 
-import Profile from './Profile';
+import Profile from "./Profile";
 
-import './navbar.scss';
+import "./navbar.scss";
 
 function Navbar({ isAuthenticated }) {
   return (
@@ -69,7 +69,7 @@ const mapStateToProps = (state) => {
   const { isAuthenticated } = state.auth;
 
   return {
-    isAuthenticated,
+    isAuthenticated
   };
 };
 

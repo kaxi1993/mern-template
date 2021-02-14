@@ -10,7 +10,6 @@
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
   },
   "include": [

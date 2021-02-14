@@ -1,30 +1,30 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { withRouter, Route, Redirect } from 'react-router-dom';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { withRouter, Route, Redirect } from "react-router-dom";
 
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Auth from './pages/Auth';
-import Dashboard from './pages/Dashboard';
-import Confidentiality from './pages/Policy';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Auth from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
+import Confidentiality from "./pages/Policy";
 
-import { CHECK_AUTH_STATUS_REQUEST } from './pages/Auth/constants';
+import { CHECK_AUTH_STATUS_REQUEST } from "./pages/Auth/constants";
 
-import './normalize.scss';
-import './common.scss';
-import './loader.scss';
+import "./normalize.scss";
+import "./common.scss";
+import "./loader.scss";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isLoading: true,
+      isLoading: true
     };
   }
 
   componentDidMount() {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
 
     if (token) {
       this.props.dispatch({ type: CHECK_AUTH_STATUS_REQUEST, payload: { token } });
@@ -45,12 +45,12 @@ class App extends Component {
 
     if (isAuthenticated !== null && isAuthenticated !== oldProps.isAuthenticated) {
       if (!isAuthenticated) {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
       }
 
       this.setState({
-        isLoading: false,
+        isLoading: false
       });
     }
   }
@@ -82,7 +82,7 @@ const mapStateToProps = (state) => {
   const { isAuthenticated } = state.auth;
 
   return {
-    isAuthenticated,
+    isAuthenticated
   };
 };
 
