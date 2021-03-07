@@ -1,10 +1,10 @@
 const { Router } = require('express');
 
-const { requireAuth } = require('../auth/auth.controller');
+const { requireAuth } = require('../auth/auth.controllers');
 
-const { validateCreateTask, validateUpdateTask } = require('./task.validation');
+const { validateCreateTask, validateUpdateTask } = require('./task.validations');
 
-const { getTasks, createTask, updateTask, deleteTask } = require('./task.controller');
+const { getTasks, createTask, updateTask, deleteTask } = require('./task.controllers');
 
 const router = Router();
 

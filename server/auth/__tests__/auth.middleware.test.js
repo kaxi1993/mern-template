@@ -1,6 +1,6 @@
 process.env.JWT_SECRET = 'TEST_SECRET';
 
-const { jwtStrategyCallback, localStrategyCallback } = require('../auth.middleware');
+const { jwtStrategyCallback, localStrategyCallback } = require('../auth.middlewares');
 
 const User = require('../../users/user.model');
 

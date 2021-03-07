@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
-const { jwtLogin, localLogin } = require('./auth/auth.middleware');
+const { jwtLogin, localLogin } = require('./auth/auth.middlewares');
 const devConfig = require('../webpack.dev.js');
 
 const app = express();

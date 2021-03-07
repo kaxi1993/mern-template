@@ -7,8 +7,8 @@ signale.disable();
 
 const app = require('../../app');
 
-jest.mock('../auth.controller', () => ({
-  ...jest.requireActual('../auth.controller'),
+jest.mock('../auth.controllers', () => ({
+  ...jest.requireActual('../auth.controllers'),
   requireAuth: (req, res, next) => {
     req.isAuthenticated = () => true;
 
@@ -19,8 +19,8 @@ jest.mock('../auth.controller', () => ({
   },
 }));
 
-jest.mock('../auth.service', () => ({
-  ...jest.requireActual('../auth.service'),
+jest.mock('../auth.services', () => ({
+  ...jest.requireActual('../auth.services'),
   sendEmail: () => ({
     status: 'ok',
     message: 'email sent successfully!',
