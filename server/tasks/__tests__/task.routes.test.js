@@ -6,7 +6,7 @@ signale.disable();
 
 const app = require('../../app');
 
-const Task = require('../task.smodel');
+const Task = require('../task.model');
 
 jest.mock('../../auth/auth.controller', () => ({
   ...jest.requireActual('../../auth/auth.controller'),

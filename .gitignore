@@ -52,7 +52,7 @@ node_modules/
 
 # dotenv environment variables file
 .env
-.env.testing
+.env.test
 .env.staging
 .env.production
 

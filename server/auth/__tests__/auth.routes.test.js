@@ -20,7 +20,7 @@ jest.mock('../auth.controller', () => ({
 }));
 
 jest.mock('../auth.service', () => ({
-  ...jest.requireActual('../auth-service'),
+  ...jest.requireActual('../auth.service'),
   sendEmail: () => ({
     status: 'ok',
     message: 'email sent successfully!',
