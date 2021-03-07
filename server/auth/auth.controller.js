@@ -2,8 +2,8 @@ const jwt = require('jwt-simple');
 const passport = require('passport');
 const signale = require('signale');
 
-const User = require('../users/user-model');
-const { sendEmail } = require('./auth-service');
+const User = require('../users/user.model');
+const { sendEmail } = require('./auth.service');
 
 const tokenize = (sub) => {
   const iat = Date.now();

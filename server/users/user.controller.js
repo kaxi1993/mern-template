@@ -1,6 +1,6 @@
 const signale = require("signale");
 
-const User = require("./user-model");
+const User = require("./user.model");
 
 const createUser = async (req, res) => {
   const newUser = req.body;

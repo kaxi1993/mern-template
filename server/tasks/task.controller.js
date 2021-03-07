@@ -1,6 +1,6 @@
 const signale = require('signale');
 
-const Task = require('./task-model');
+const Task = require('./task.model');
 
 const getTasks = async (req, res) => {
   const user = req.user._id;

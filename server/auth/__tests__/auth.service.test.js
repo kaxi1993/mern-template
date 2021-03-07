@@ -4,7 +4,7 @@ const signale = require('signale');
 // disable logging during testing
 signale.disable();
 
-const { sendEmail } = require('../auth-service');
+const { sendEmail } = require('../auth.service');
 
 const to = 'test@gmail.com';
 const token = 'TEST_TOKEN';

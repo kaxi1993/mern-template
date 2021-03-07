@@ -6,7 +6,7 @@ signale.disable();
 
 const app = require('../../app');
 
-const User = require('../user-model');
+const User = require('../user.model');
 
 const name = 'test';
 const email = 'test@gmail.com';

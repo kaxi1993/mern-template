@@ -6,10 +6,10 @@ signale.disable();
 
 const app = require('../../app');
 
-const Task = require('../task-model');
+const Task = require('../task.smodel');
 
-jest.mock('../../auth/auth-controller', () => ({
-  ...jest.requireActual('../../auth/auth-controller'),
+jest.mock('../../auth/auth.controller', () => ({
+  ...jest.requireActual('../../auth/auth.controller'),
   requireAuth: (req, res, next) => {
     req.user = {
       _id: 1,

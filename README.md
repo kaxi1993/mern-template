@@ -100,10 +100,10 @@ and each module looks like this:
 ```
 |__ tasks
     |__ __tests__
-    |.. index.js
-    |.. task-controller.js
-    |.. task-model.js
-    |.. task-validation.js
+    |.. task.routes.js
+    |.. task.controller.js
+    |.. task.model.js
+    |.. task.validation.js
 ```
 
 I use [jest](https://jestjs.io/) for testing, [joi](https://www.npmjs.com/package/joi) for validation, [passport-jwt](https://www.npmjs.com/package/passport-jwt) for authentication, [mongoose](https://mongoosejs.com/) driver for mongodb and [signale](https://www.npmjs.com/package/signale) for logging.

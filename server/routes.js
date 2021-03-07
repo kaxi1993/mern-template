@@ -1,6 +1,6 @@
-const auth = require('./auth');
-const users = require('./users');
-const tasks = require('./tasks');
+const auth = require('./auth/auth.routes');
+const users = require('./users/user.routes');
+const tasks = require('./tasks/task.routes');
 
 module.exports = (app) => {
   app.use('/api', auth);

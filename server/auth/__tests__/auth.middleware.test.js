@@ -1,8 +1,8 @@
 process.env.JWT_SECRET = 'TEST_SECRET';
 
-const { jwtStrategyCallback, localStrategyCallback } = require('../auth-middleware');
+const { jwtStrategyCallback, localStrategyCallback } = require('../auth.middleware');
 
-const User = require('../../users/user-model');
+const User = require('../../users/user.model');
 
 const email = 'test@gmail.com';
 const password = 'password';
