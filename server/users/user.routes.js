@@ -1,8 +1,7 @@
-const { Router } = require('express');
+import { Router } from 'express';
 
-const { createUser } = require('./user.controllers');
-
-const { validateCreateUser } = require('./user.validations');
+import { createUser } from './user.controllers.js';
+import { validateCreateUser } from './user.validations.js';
 
 const router = Router();
 

@@ -1,8 +1,8 @@
 process.env.JWT_SECRET = 'TEST_SECRET';
 
-const passport = require('passport');
+import passport from 'passport';
 
-const { tokenize, requireLogin } = require('../auth.controllers');
+import { tokenize, requireLogin } from '../auth.controllers.js';
 
 describe('Auth Controller Tests', () => {
   describe('tokenize tests', () => {
@@ -11,7 +11,8 @@ describe('Auth Controller Tests', () => {
 
       const token = tokenize(userId);
 
-      expect(typeof token).toBe('string');
+      expect(typeof token)
+        .toBe('string');
     });
   });
 
@@ -23,8 +24,10 @@ describe('Auth Controller Tests', () => {
 
       requireLogin({}, {}, nextMock);
 
-      expect(nextMock.mock.calls.length).toBe(1);
-      expect(nextMock.mock.calls[0][0]).toBeUndefined();
+      expect(nextMock.mock.calls.length)
+        .toBe(1);
+      expect(nextMock.mock.calls[0][0])
+        .toBeUndefined();
     });
 
     test('it should move to next middleware with error', () => {
@@ -34,8 +37,10 @@ describe('Auth Controller Tests', () => {
 
       requireLogin({}, {}, nextMock);
 
-      expect(nextMock.mock.calls.length).toBe(1);
-      expect(nextMock.mock.calls[0][0]).toEqual(new Error());
+      expect(nextMock.mock.calls.length)
+        .toBe(1);
+      expect(nextMock.mock.calls[0][0])
+        .toEqual(new Error());
     });
 
     test('it should return login error', () => {
@@ -43,22 +48,25 @@ describe('Auth Controller Tests', () => {
 
       passport.authenticate = jest.fn((type, session, callback) => () =>
         callback(null, null, {
-          message,
-        }),
+          message
+        })
       );
 
-      const jsonMock = jest.fn(() => {});
+      const jsonMock = jest.fn(() => {
+      });
       const res = {
-        json: jsonMock,
+        json: jsonMock
       };
 
       requireLogin({}, res);
 
-      expect(jsonMock.mock.calls.length).toBe(1);
-      expect(jsonMock.mock.calls[0][0]).toEqual({
-        message,
-        status: 'fail',
-      });
+      expect(jsonMock.mock.calls.length)
+        .toBe(1);
+      expect(jsonMock.mock.calls[0][0])
+        .toEqual({
+          message,
+          status: 'fail'
+        });
     });
   });
 });

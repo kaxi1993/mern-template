@@ -2,7 +2,8 @@
   "name": "mern-template",
   "version": "1.0.6",
   "description": "MERN boilerplate generator. Mongo, Express, React, Node todo list web app.",
-  "main": "bin/www",
+  "main": "bin/www.js",
+  "type": "module",
   "scripts": {
     "start": "nodemon",
     "build": "webpack --config webpack.prod.js",

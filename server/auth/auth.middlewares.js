@@ -1,14 +1,14 @@
-const LocalStrategy = require('passport-local');
-const { Strategy, ExtractJwt } = require('passport-jwt');
+import LocalStrategy from 'passport-local';
+import { Strategy, ExtractJwt } from 'passport-jwt';
 
-const User = require('../users/user.model');
+import User from '../users/user.model.js';
 
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.JWT_SECRET,
+  secretOrKey: process.env.JWT_SECRET
 };
 
-const jwtStrategyCallback = async (payload, done) => {
+export const jwtStrategyCallback = async (payload, done) => {
   try {
     const user = await User.findById(payload.sub);
 
@@ -18,7 +18,7 @@ const jwtStrategyCallback = async (payload, done) => {
 
     if (!payload.exp || payload.exp <= Date.now()) {
       return done(null, false, {
-        message: 'Token has expired',
+        message: 'Token has expired'
       });
     }
 
@@ -28,17 +28,17 @@ const jwtStrategyCallback = async (payload, done) => {
   }
 };
 
-const localStrategyCallback = async (email, password, done) => {
+export const localStrategyCallback = async (email, password, done) => {
   const message = 'Incorrect email or password';
 
   try {
     const user = await User.findOne({
-      email,
+      email
     });
 
     if (!user) {
       return done(null, false, {
-        message,
+        message
       });
     }
 
@@ -49,7 +49,7 @@ const localStrategyCallback = async (email, password, done) => {
 
       if (!isMatch) {
         return done(null, false, {
-          message,
+          message
         });
       }
 
@@ -60,17 +60,11 @@ const localStrategyCallback = async (email, password, done) => {
   }
 };
 
-const jwtLogin = new Strategy(jwtOptions, jwtStrategyCallback);
-const localLogin = new LocalStrategy(
+export const jwtLogin = new Strategy(jwtOptions, jwtStrategyCallback);
+export const localLogin = new LocalStrategy(
   {
-    usernameField: 'email',
+    usernameField: 'email'
   },
-  localStrategyCallback,
+  localStrategyCallback
 );
 
-module.exports = {
-  jwtLogin,
-  jwtStrategyCallback,
-  localLogin,
-  localStrategyCallback,
-};

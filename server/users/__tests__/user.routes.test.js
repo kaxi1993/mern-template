@@ -1,12 +1,11 @@
-const request = require('supertest');
-const signale = require('signale');
+import request from 'supertest';
+import signale from 'signale';
 
 // disable logging during testing
 signale.disable();
 
-const app = require('../../app');
-
-const User = require('../user.model');
+import app from '../../app.js';
+import User from '../user.model.js';
 
 const name = 'test';
 const email = 'test@gmail.com';

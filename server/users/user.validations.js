@@ -1,6 +1,6 @@
-const joi = require("joi");
+import joi from 'joi';
 
-const validateCreateUser = (req, res, next) => {
+export const validateCreateUser = (req, res, next) => {
   const user = req.body;
 
   const schema = joi.object()
@@ -9,7 +9,7 @@ const validateCreateUser = (req, res, next) => {
         .string()
         .regex(/^[a-zA-Z]+(\s[a-zA-Z]+)?$/)
         .required()
-        .error(() => "\"name\" invalid"),
+        .error(() => '"name" invalid'),
       email: joi.string()
         .email()
         .required(),
@@ -31,11 +31,7 @@ const validateCreateUser = (req, res, next) => {
 
   res.json({
     message,
-    status: "fail",
+    status: 'fail',
     field: context.key
   });
-};
-
-module.exports = {
-  validateCreateUser
 };

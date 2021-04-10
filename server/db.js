@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const signale = require('signale');
+import mongoose from 'mongoose';
+import signale from 'signale';
 
 mongoose.Promise = Promise;
 
@@ -23,4 +23,4 @@ const db = {
   },
 };
 
-module.exports = db;
+export default db

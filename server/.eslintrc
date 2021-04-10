@@ -2,10 +2,10 @@
   "env": {
     "node": true
   },
-  "parserOptions": {
-    "ecmaVersion": 2021
-  },
   "extends": [
     "../.eslintrc"
-  ]
+  ],
+  "globals": {
+    "Promise": true
+  }
 }

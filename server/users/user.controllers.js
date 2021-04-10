@@ -1,8 +1,8 @@
-const signale = require("signale");
+import signale from 'signale';
 
-const User = require("./user.model");
+import User from './user.model.js';
 
-const createUser = async (req, res) => {
+export const createUser = async (req, res) => {
   const newUser = req.body;
 
   try {
@@ -12,9 +12,9 @@ const createUser = async (req, res) => {
 
     if (user) {
       return res.json({
-        message: "User with this email address already exists",
-        status: "fail",
-        field: "email"
+        message: 'User with this email address already exists',
+        status: 'fail',
+        field: 'email'
       });
     }
 
@@ -22,16 +22,12 @@ const createUser = async (req, res) => {
 
     res.json({
       _id,
-      status: "ok"
+      status: 'ok'
     });
   } catch (e) {
-    signale.fatal("Error occurred in createUser", e);
+    signale.fatal('Error occurred in createUser', e);
 
     res.status(500)
-      .send("Internal server error");
+      .send('Internal server error');
   }
-};
-
-module.exports = {
-  createUser
 };

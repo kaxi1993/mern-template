@@ -1,6 +1,6 @@
-const bcrypt = require('bcrypt-nodejs');
+import bcrypt from 'bcrypt-nodejs';
 
-const User = require('../user.model');
+import User from '../user.model.js';
 
 const candidatePasword = 'password';
 const password = 'password';

@@ -1,10 +1,8 @@
-const { Router } = require('express');
+import { Router } from 'express';
 
-const { requireAuth } = require('../auth/auth.controllers');
-
-const { validateCreateTask, validateUpdateTask } = require('./task.validations');
-
-const { getTasks, createTask, updateTask, deleteTask } = require('./task.controllers');
+import { requireAuth } from '../auth/auth.controllers.js';
+import { validateCreateTask, validateUpdateTask } from './task.validations.js';
+import { getTasks, createTask, updateTask, deleteTask } from './task.controllers.js';
 
 const router = Router();
 
@@ -13,4 +11,4 @@ router.post('/tasks', requireAuth, validateCreateTask, createTask);
 router.put('/tasks/:id', requireAuth, validateUpdateTask, updateTask);
 router.delete('/tasks/:id', requireAuth, deleteTask);
 
-module.exports = router;
+export default router;

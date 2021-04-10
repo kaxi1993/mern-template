@@ -1,34 +1,34 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-const express = require('express');
-const path = require('path');
-const dotenv = require('dotenv');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const passport = require('passport');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const logger = require('morgan');
+import express from 'express';
+import path from 'path';
+import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+import passport from 'passport';
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
+import morgan from 'morgan';
 
 // load environment variables
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config({
-    path: path.resolve(`${__dirname}/../config/.env.${process.env.NODE_ENV}`),
+    path: path.resolve(`${__dirname}/../config/.env.${process.env.NODE_ENV}`)
   });
 }
 
-const { jwtLogin, localLogin } = require('./auth/auth.middlewares');
-const devConfig = require('../webpack.dev.js');
+import { jwtLogin, localLogin } from './auth/auth.middlewares.js';
+import devConfig from '../webpack.dev.js';
 
 const app = express();
 
-app.use(logger('dev'));
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
-    extended: false,
-  }),
+    extended: false
+  })
 );
 app.use(cookieParser());
 
@@ -50,20 +50,20 @@ if (process.env.NODE_ENV === 'development') {
       quiet: false,
       noInfo: false,
       lazy: false,
-      stats: 'normal',
-    }),
+      stats: 'normal'
+    })
   );
 
   app.use(
     webpackHotMiddleware(compiler, {
       path: '/__webpack_hmr',
-      heartbeat: 2000,
-    }),
+      heartbeat: 2000
+    })
   );
 
   app.use(express.static(path.resolve(__dirname, '..', 'public')));
 
-  app.use('*', (req, res, next) => {
+  app.use((req, res, next) => {
     const filename = path.join(compiler.outputPath, 'index.html');
 
     compiler.outputFileSystem.readFile(filename, (err, result) => {
@@ -84,4 +84,4 @@ if (process.env.NODE_ENV === 'development') {
   });
 }
 
-module.exports = app;
+export default app;

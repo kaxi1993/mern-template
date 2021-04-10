@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt-nodejs");
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt-nodejs';
 
 const { Schema } = mongoose;
 
@@ -54,8 +54,8 @@ function preSave (next) {
 userSchema.methods.comparePassword = comparePassword;
 userSchema.methods.preSave = preSave;
 
-userSchema.pre("save", preSave);
+userSchema.pre('save', preSave);
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model('User', userSchema);
 
-module.exports = User;
+export default User;
