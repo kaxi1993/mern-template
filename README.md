@@ -58,7 +58,6 @@ docker-compose up
 |.. jest.config.js
 |.. package.json
 |.. process.json
-|.. project.config.js
 |.. webpack.common.js
 |.. webpack.dev.js
 |.. webpack.prod.js

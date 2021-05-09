@@ -7,4 +7,4 @@ const router = Router();
 
 router.post('/users', validateCreateUser, createUser);
 
-module.exports = router;
+export default router;

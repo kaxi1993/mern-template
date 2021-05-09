@@ -13,9 +13,9 @@
   },
   "globals": {
     "process": true,
-    "__dirname": true
+    "URL": true
   },
   "rules": {
-    "semi": "error"
+    "semi": "warn"
   }
 }

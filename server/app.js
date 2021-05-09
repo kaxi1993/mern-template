@@ -11,10 +11,12 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import morgan from 'morgan';
 
+import { ApiRoutes } from './routes.js';
+
 // load environment variables
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config({
-    path: path.resolve(`${__dirname}/../config/.env.${process.env.NODE_ENV}`)
+    path: path.resolve(new URL(`../config/.env.${process.env.NODE_ENV}`, import.meta.url).pathname)
   });
 }
 
@@ -37,7 +39,7 @@ passport.use(jwtLogin);
 passport.use(localLogin);
 
 // Apply API Routes
-require('./routes')(app);
+ApiRoutes(app);
 
 if (process.env.NODE_ENV === 'development') {
   const compiler = webpack(devConfig);
@@ -45,7 +47,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(
     webpackDevMiddleware(compiler, {
       publicPath: '/',
-      contentBase: path.resolve(__dirname, '..', 'client'),
+      contentBase: path.resolve(new URL('../client', import.meta.url).pathname),
       hot: true,
       quiet: false,
       noInfo: false,
@@ -61,7 +63,7 @@ if (process.env.NODE_ENV === 'development') {
     })
   );
 
-  app.use(express.static(path.resolve(__dirname, '..', 'public')));
+  app.use(express.static(path.resolve(new URL('../public', import.meta.url).pathname)));
 
   app.use((req, res, next) => {
     const filename = path.join(compiler.outputPath, 'index.html');
@@ -77,10 +79,10 @@ if (process.env.NODE_ENV === 'development') {
     });
   });
 } else {
-  app.use(express.static(path.resolve(__dirname, '..', 'public')));
+  app.use(express.static(path.resolve(new URL('../public', import.meta.url).pathname)));
 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '..', 'index.html'));
+    res.sendFile(path.resolve(new URL('../index.html', import.meta.url).pathname));
   });
 }
 

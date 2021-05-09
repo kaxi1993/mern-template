@@ -8,7 +8,7 @@ export default {
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(new URL('dist', import.meta.url).pathname),
     publicPath: '/'
   },
   resolve: {
@@ -28,7 +28,7 @@ export default {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Mern',
-      template: path.resolve(__dirname, 'client', 'index.html'),
+      template: path.resolve(new URL('client/index.html', import.meta.url).pathname),
       filename: 'index.html'
     })
   ]
