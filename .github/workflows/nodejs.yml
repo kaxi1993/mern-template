@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [10.x, 12.x, 14.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -22,7 +22,7 @@ jobs:
         npm install
         npm run build --if-present
         npm test
-        npm test:coverage
+        npm run test:coverage
         codecov
       env:
         CI: true
