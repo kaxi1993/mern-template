@@ -22,6 +22,10 @@
     "type": "git",
     "url": "git+https://github.com/kaxi1993/mern-template"
   },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
   "sideEffects": false,
   "author": "kaxi1993<kakhidze2012@gmail.com>",
   "license": "MIT",
