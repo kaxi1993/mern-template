@@ -9,6 +9,7 @@ const passport = require('passport')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
+const helmet = require('helmet')
 const logger = require('morgan')
 
 // load environment variables
@@ -26,6 +27,7 @@ const devConfig = require('../webpack.dev.js')
 
 const app = express()
 
+app.use(helmet())
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
