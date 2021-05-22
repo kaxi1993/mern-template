@@ -22,8 +22,9 @@ if (process.env.NODE_ENV !== 'production') {
     path: path.resolve(new URL(`../config/.env.${process.env.NODE_ENV}`, import.meta.url).pathname)
   });
 }
+console.log('process.env', process.env)
 
-import { jwtLogin, localLogin } from './auth/auth.middlewares.js';
+// import { jwtLogin, localLogin } from './auth/auth.middlewares.js';
 import devConfig from '../webpack.dev.js';
 
 const app = express();
@@ -45,8 +46,8 @@ app.use(
 app.use(cookieParser());
 
 // Apply passport middleware
-passport.use(jwtLogin);
-passport.use(localLogin);
+// passport.use(jwtLogin);
+// passport.use(localLogin);
 
 // Apply API Routes
 ApiRoutes(app);
