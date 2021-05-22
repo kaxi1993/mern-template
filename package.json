@@ -65,6 +65,7 @@
     "babel-eslint": "^8.2.5",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^2.0.2",
+    "codecov": "^3.8.2",
     "css-loader": "^5.2.5",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.4",
