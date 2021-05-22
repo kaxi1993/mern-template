@@ -10,6 +10,7 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 import morgan from 'morgan';
 
 import { ApiRoutes } from './routes.js';
@@ -27,7 +28,13 @@ import devConfig from '../webpack.dev.js';
 
 const app = express();
 
-app.use(helmet())
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // limit each IP to 100 requests per windowMs
+});
+
+app.use(helmet());
+app.use(limiter);
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(
