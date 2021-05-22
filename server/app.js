@@ -9,9 +9,11 @@ import passport from 'passport';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
+import helmet from 'helmet';
 import morgan from 'morgan';
 
 import { ApiRoutes } from './routes.js';
+
 
 // load environment variables
 if (process.env.NODE_ENV !== 'production') {
@@ -25,6 +27,7 @@ import devConfig from '../webpack.dev.js';
 
 const app = express();
 
+app.use(helmet())
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(
