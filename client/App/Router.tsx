@@ -1,10 +1,7 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
 
 const AppRouter: React.FC = () => (
-  <Switch>
-
-  </Switch>
+  <div>Hello world!</div>
 );
 
 export default AppRouter;

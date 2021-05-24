@@ -5,7 +5,7 @@ import path from 'path';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import passport from 'passport';
+// import passport from 'passport';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
@@ -22,7 +22,6 @@ if (process.env.NODE_ENV !== 'production') {
     path: path.resolve(new URL(`../config/.env.${process.env.NODE_ENV}`, import.meta.url).pathname)
   });
 }
-console.log('process.env', process.env)
 
 // import { jwtLogin, localLogin } from './auth/auth.middlewares.js';
 import devConfig from '../webpack.dev.js';
@@ -57,13 +56,8 @@ if (process.env.NODE_ENV === 'development') {
 
   app.use(
     webpackDevMiddleware(compiler, {
-      publicPath: '/',
-      contentBase: path.resolve(new URL('../client', import.meta.url).pathname),
-      hot: true,
-      quiet: false,
-      noInfo: false,
-      lazy: false,
-      stats: 'normal'
+      stats: 'normal',
+      serverSideRender: true
     })
   );
 
