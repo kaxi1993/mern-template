@@ -1,6 +1,6 @@
 {
   "name": "mern-template",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "MERN boilerplate generator. Mongo, Express, React, Node todo list web app.",
   "main": "bin/www.js",
   "type": "module",
@@ -69,6 +69,7 @@
     "babel-eslint": "^8.2.5",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^2.0.2",
+    "codecov": "^3.8.2",
     "css-loader": "^5.2.5",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.4",
