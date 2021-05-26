@@ -11,7 +11,8 @@
     "lint:fix": "eslint --fix .",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "prepare": "husky install"
   },
   "nodemonConfig": {
     "ignore": [
@@ -80,6 +81,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
     "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
     "jest": "^26.6.3",
     "joi": "^17.4.0",
     "node-sass": "^4.14.1",
